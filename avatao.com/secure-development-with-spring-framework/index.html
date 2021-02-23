@@ -1,0 +1,449 @@
+<!DOCTYPE html><html
+lang=en-US>
+<!-- Mirrored from avatao.com/secure-development-with-spring-framework/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:07:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><link
+rel=stylesheet href=../content/cache/minify/index.html media=all> <script defer src=../content/cache/minify/b0459.default.include.e8b74a.js></script> <style>img.lazy{min-height:1px}</style><link
+rel=preload href=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js as=script><meta
+charset="UTF-8"><meta
+http-equiv="X-UA-Compatible" content="IE=edge"><link
+rel=pingback href=../xmlrpc.php> <script>document.documentElement.className='js';</script> <script id=Cookiebot src=https://consent.cookiebot.com/uc.js    data-cbid=f7ab1fd0-7ef1-4100-9210-b93c0d248a0b data-blockingmode=auto></script><script>var et_site_url='../index.html';var et_post_id='1036';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}</script>  <script data-cfasync=false data-pagespeed-no-defer>var gtm4wp_datalayer_name="dataLayer";var dataLayer=dataLayer||[];</script> <title>Secure development with Spring Framework - Avatao</title><meta
+name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link
+rel=canonical href=index.html ><meta
+property="og:locale" content="en_US"><meta
+property="og:type" content="article"><meta
+property="og:title" content="Secure development with Spring Framework - Avatao"><meta
+property="og:url" content="https://avatao.com/secure-development-with-spring-framework/"><meta
+property="og:site_name" content="Avatao"><meta
+property="article:publisher" content="https://www.facebook.com/theavatao"><meta
+property="article:published_time" content="2018-11-08T09:44:39+00:00"><meta
+property="article:modified_time" content="2021-02-12T15:20:10+00:00"><meta
+property="og:image" content="https://avatao.com/media/2020/07/spring_security_lg.png"><meta
+property="og:image:width" content="1921"><meta
+property="og:image:height" content="1081"><meta
+name="twitter:card" content="summary_large_image"><meta
+name="twitter:creator" content="@theavatao"><meta
+name="twitter:site" content="@theavatao"> <script type=application/ld+json class=yoast-schema-graph>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://avatao.com/#website","url":"https://avatao.com/","name":"Avatao","description":"Interactive secure coding training","potentialAction":[{"@type":"SearchAction","target":"https://avatao.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://avatao.com/secure-development-with-spring-framework/#primaryimage","inLanguage":"en-US","url":"https://avatao.com/media/2020/07/spring_security_lg.png","width":1921,"height":1081,"caption":"spring security"},{"@type":"WebPage","@id":"https://avatao.com/secure-development-with-spring-framework/#webpage","url":"https://avatao.com/secure-development-with-spring-framework/","name":"Secure development with Spring Framework - Avatao","isPartOf":{"@id":"https://avatao.com/#website"},"primaryImageOfPage":{"@id":"https://avatao.com/secure-development-with-spring-framework/#primaryimage"},"datePublished":"2018-11-08T09:44:39+00:00","dateModified":"2021-02-12T15:20:10+00:00","author":{"@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://avatao.com/secure-development-with-spring-framework/"]}]},{"@type":"Person","@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435","name":"awataoadmin","image":{"@type":"ImageObject","@id":"https://avatao.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/c623e99bd04d7916c98927d1d5ae0587?s=96&d=mm&r=g","caption":"awataoadmin"},"sameAs":["https://avatao.com"]}]}</script> <link
+rel=dns-prefetch href=http://www.google.com/><link
+rel=dns-prefetch href=http://fonts.googleapis.com/><link
+rel=dns-prefetch href=http://s.w.org/><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Feed" href=../feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Comments Feed" href=../comments/feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Secure development with Spring Framework Comments Feed" href=feed/index.html > <script>window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/avatao.com\/includes\/js\/wp-emoji-release.min.js?ver=5.6.1"}};!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);</script> <style>img.wp-smiley,img.emoji{display:inline !important;border:none !important;box-shadow:none !important;height:1em !important;width:1em !important;margin:0 .07em !important;vertical-align:-0.1em !important;background:none !important;padding:0 !important}</style><link
+rel=stylesheet id=wp-block-library-css  href='../includes/css/dist/block-library/style.mind96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-grid-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/cf7-gridd96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-module-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/moduled96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=contact-form-7-css  href='../xoojeeny/contact-form-7/includes/css/styles9dff.css?ver=5.3.2' type=text/css media=all><link
+rel=stylesheet id=monsterinsights-popular-posts-style-css  href='../xoojeeny/google-analytics-for-wordpress/assets/css/frontend.minc6b6.css?ver=7.13.0' type=text/css media=all><link
+rel=stylesheet id=divi-style-css  href='../template/allskin89df.css?ver=4.6.0' type=text/css media=all><link
+rel=stylesheet id=cf7-styler-styles-css  href='../xoojeeny/cf7-styler-for-divi/styles/style.min8a54.css?ver=1.0.0' type=text/css media=all><link
+rel=stylesheet id=et-builder-googlefonts-cached-css  href='https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWork+Sans%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900%7CUbuntu%3A300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic&amp;subset=latin%2Clatin-ext&amp;display=swap&amp;ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dashicons-css  href='../includes/css/dashicons.mind96d.css?ver=5.6.1' type=text/css media=all> <script src='../includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id=jquery-core-js></script> <script src='../includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id=jquery-migrate-js></script> <script src='../xoojeeny/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker0455.js?ver=1.11.6' id=gtm4wp-form-move-tracker-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo&amp;ver=5.6.1' id=recaptcha-v3-js></script> <script src='../template/core/admin/js/es6-promise.auto.mind96d.js?ver=5.6.1' id=es6-promise-js></script> <script id=et-core-api-spam-recaptcha-js-extra>var et_core_api_spam_recaptcha={"site_key":"6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo","page_action":{"action":"secure_development_with_spring_framework"}};</script> <script src='../template/core/admin/js/recaptchad96d.js?ver=5.6.1' id=et-core-api-spam-recaptcha-js></script> <script id=eio-lazy-load-js-extra>var eio_lazy_vars={"exactdn_domain":"","skip_autoscale":"0"};</script> <script src='../xoojeeny/ewww-image-optimizer/includes/lazysizes.min8e09.js?ver=582.0' id=eio-lazy-load-js></script> <link
+rel=EditURI type=application/rsd+xml title=RSD href=../xmlrpc0db0.php?rsd><link
+rel=shortlink href='../index6b6b.html?p=1036'><link
+rel=alternate type=application/json+oembed href="../wp-json/oembed/1.0/embedf29b.json?url=https%3A%2F%2Favatao.com%2Fsecure-development-with-spring-framework%2F"><link
+rel=alternate type=text/xml+oembed href="../wp-json/oembed/1.0/embed9035?url=https%3A%2F%2Favatao.com%2Fsecure-development-with-spring-framework%2F&amp;format=xml"><style>.entry-meta{display:none !important}.home .entry-meta{display:none}.entry-footer{display:none !important}.home .entry-footer{display:none}</style>
+ <script data-cfasync=false data-pagespeed-no-defer>var dataLayer_content={"pagePostType":"post","pagePostType2":"single-post","pageCategory":["secure-coding-best-practices"],"pagePostAuthor":"awataoadmin"};dataLayer.push(dataLayer_content);</script> <script data-cfasync=false>/*<![CDATA[*/(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KWMT35N');/*]]>*/</script> <meta
+name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><noscript><style>.lazyload[data-src]{display:none !important}</style></noscript><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-150x150.png sizes=32x32><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png sizes=192x192><link
+rel=apple-touch-icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png><meta
+name="msapplication-TileImage" content="https://avatao.com/media/2020/08/cropped-Avatao-favicon-300x300.png"><link
+rel=stylesheet id=et-core-unified-1036-cached-inline-styles href=../content/et-cache/1036/et-core-unified-1036-16140057728526.min.css onerror="et_core_page_resource_fallback(this, true)" onload=et_core_page_resource_fallback(this)></head><body
+class="post-template-default single single-post postid-1036 single-format-standard et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css"><div
+id=page-container><header
+id=main-header data-height-onload=66><div
+class="container clearfix et_menu_container"><div
+class=logo_container>
+<span
+class=logo_helper></span>
+<a
+href=../index.html >
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=Avatao id=logo data-height-percentage=54 data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png alt=Avatao id=logo data-height-percentage=54 data-eio=l></noscript>
+</a></div><div
+id=et-top-navigation data-height=66 data-fixed-height=40><nav
+id=top-menu-nav><ul
+id=top-menu class=nav><li
+id=menu-item-1458 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1458"><a
+href="../index0a89.html?page_id=907">Solutions</a><ul
+class=sub-menu><li
+id=menu-item-4059 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4059"><a
+href=../security-training/index.html >Security training</a></li><li
+id=menu-item-4318 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4318"><a
+href=../compliance/index.html >Compliance</a></li></ul></li><li
+id=menu-item-1721 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1721"><a
+href=../topics-we-cover/index.html >Topics we cover</a></li><li
+id=menu-item-1448 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1448"><a
+href=../case-studies/index.html >Resources</a><ul
+class=sub-menu><li
+id=menu-item-3850 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3850"><a
+href=../blog/index.html >Blog</a></li><li
+id=menu-item-1445 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1445"><a
+href=../case-studies/index.html >Case studies</a></li><li
+id=menu-item-2740 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2740"><a
+href=../how-to-build-security-advantage-from-bugs.html>Ebooks</a></li></ul></li><li
+id=menu-item-3897 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3897"><a
+href=../our-pricing/index.html >Plans</a></li><li
+id=menu-item-3581 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3581"><a
+href=../contact/index.html >Contact</a></li><li
+id=menu-item-1450 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1450"><a
+href=https://next.avatao.com/>Login</a></li><li
+id=menu-item-3121 class="menu_button menu-item menu-item-type-custom menu-item-object-custom menu-item-3121"><a
+href=https://next.avatao.com/trial>Try for free</a></li></ul></nav><div
+id=et_top_search>
+<span
+id=et_search_icon></span></div><div
+id=et_mobile_nav_menu><div
+class="mobile_nav closed">
+<span
+class=select_page>Select Page</span>
+<span
+class="mobile_menu_bar mobile_menu_bar_toggle"></span></div></div></div></div><div
+class=et_search_outer><div
+class="container et_search_form_container"><form
+role=search method=get class=et-search-form action=https://avatao.com/ >
+<input
+type=search class=et-search-field placeholder="Search &hellip;" value name=s title="Search for:"></form>
+<span
+class=et_close_search_field></span></div></div></header><div
+id=et-main-area><div
+id=main-content><div
+class=container><div
+id=content-area class=clearfix><div
+id=left-area><article
+id=post-1036 class="et_pb_post post-1036 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=entry-content><div
+id=et-boc class=et-boc><div
+class="et-l et-l--post"><div
+class="et_builder_inner_content et_pb_gutters3"><div
+class="et_pb_section et_pb_section_0 et_section_regular" ><div
+class="et_pb_row et_pb_row_0 et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner>Secure development with Spring Framework</div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_blurb et_pb_blurb_0 et_hover_enabled  et_pb_text_align_center  et_pb_blurb_position_left et_pb_bg_layout_light"><div
+class=et_pb_blurb_content><div
+class=et_pb_blurb_container><h4 class="et_pb_module_header"><span>Written by Ákos Jakab</span></h4></div></div></div></div></div></div><div
+class="et_pb_section et_pb_section_1 et_hover_enabled et_section_specialty" ><div
+class="et_pb_row et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_2   et_pb_specialty_column  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_row_inner et_pb_row_inner_0 et_hover_enabled"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_0 et_hover_enabled et-last-child"><div
+class="et_pb_module et_pb_image et_pb_image_0">
+<span
+class="et_pb_image_wrap "><img
+alt="spring security" title=spring_security_lg srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src=https://avatao.com/media/2020/07/spring_security_lg.png data-srcset="https://avatao.com/media/2020/07/spring_security_lg.png 1921w, https://avatao.com/media/2020/07/spring_security_lg-1280x720.png 1280w, https://avatao.com/media/2020/07/spring_security_lg-980x551.png 980w, https://avatao.com/media/2020/07/spring_security_lg-480x270.png 480w" data-sizes=auto class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201921%201081'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/spring_security_lg.png alt="spring security" title=spring_security_lg data-srcset="https://avatao.com/media/2020/07/spring_security_lg.png 1921w, https://avatao.com/media/2020/07/spring_security_lg-1280x720.png 1280w, https://avatao.com/media/2020/07/spring_security_lg-980x551.png 980w, https://avatao.com/media/2020/07/spring_security_lg-480x270.png 480w" data-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1921px, 100vw" data-eio=l></noscript></span></div><div
+class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><p><img
+src=../content/ewww/lazy/placeholder-1920x1080.png class="img-fluid wp-post-image jetpack-lazy-image jetpack-lazy-image--handled lazyload" alt data-attachment-id=6036 data-permalink=https://avatao.com/spring_security_lg/ data-orig-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1921%2C1081&amp;ssl=1" data-orig-size=1921,1081 data-comments-opened=1 data-image-meta={&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;} data-image-title=spring_security_lg data-image-description data-medium-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=300%2C169&amp;ssl=1" data-large-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1024%2C576&amp;ssl=1"  data-lazy-loaded=1  width=1921 height=1081 data-src="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1921%2C1081&amp;ssl=1" loading=lazy data-srcset="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?w=1921&amp;ssl=1 1921w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1024%2C576&amp;ssl=1 1024w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1536%2C864&amp;ssl=1 1536w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1200%2C675&amp;ssl=1 1200w" data-sizes=auto><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201921%201081'%3E%3C/svg%3E" data-src="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1921%2C1081&amp;ssl=1" class="img-fluid wp-post-image jetpack-lazy-image jetpack-lazy-image--handled lazy" alt data-attachment-id=6036 data-permalink=https://avatao.com/spring_security_lg/ data-orig-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1921%2C1081&amp;ssl=1" data-orig-size=1921,1081 data-comments-opened=1 data-image-meta={&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;} data-image-title=spring_security_lg data-image-description data-medium-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=300%2C169&amp;ssl=1" data-large-file="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?fit=1024%2C576&amp;ssl=1" data-srcset="https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?w=1921&amp;ssl=1 1921w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1024%2C576&amp;ssl=1 1024w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1536%2C864&amp;ssl=1 1536w, https://i1.wp.com/avatao.com/file/2020/05/spring_security_lg.jpg?resize=1200%2C675&amp;ssl=1 1200w" data-lazy-loaded=1 data-sizes="(max-width: 1921px) 100vw, 1921px" width=1921 height=1081 data-eio=l></noscript></p><div
+class=blog_content><p>In the past decade, Spring Framework became a well established and prominent web framework for developing Java applications. The most exciting and essential changes in the Spring ecosystem was the birth and progression of Spring Boot. No matter what you need, Spring Boot provides comprehensive, easy-to-use and interdisciplinary development environment tools for deployment, and assists in the whole development lifecycle.</p><p>&nbsp;</p><hr><p>One of the major strong points of the Spring Boot is its auto-configuration capability that attempts to automatically configure the Spring application based on the .jar dependencies we have added. This key feature related to the Spring Boot starters gives us freedom, guarantees quick development time and saves us from the burden of specific metadata configuration. However, applying security to our application is a perfect example when this auto-configuration capability is not enough as the out of the box spring security configuration usually requires fine-tuning. The Spring Security starter is a one-size-fits-all solution, and there are many details to be specified here. First, we have to override the basic auto-configuration and define our custom-tailored security requirements based on the available classes on the classpath.</p><p>Spring Security is a powerful and highly customizable authentication and access-control framework. In the following, we will show the coolest Spring Security features and best practices.</p><h2 id="&quot;the-magical-websecurityconfigureradapter&quot;">The magical WebSecurityConfigurerAdapter</h2><p>By implementing a security configuration class, we can, for example, override the default security settings, specify permissions, define users, roles and a custom login page view. For this, we have to extend the <code
+class=&quot;language-plaintext>WebSecurityConfigurerAdapter</code>. By default, the following configuration is set up in the <code
+class=&quot;language-plaintext>WebSecurityConfigurerAdapter</code> class. This grants authenticated users access all URLs.</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;nd&quot;>@Configuration</span>
+<span class=&quot;nd&quot;>@EnableWebSecurity</span>
+<span class=&quot;kd&quot;>public</span> <span class=&quot;kd&quot;>class</span> <span class=&quot;nc&quot;>SecurityConfig</span> <span class=&quot;kd&quot;>extends</span> <span class=&quot;nc&quot;>WebSecurityConfigurerAdapter</span> <span class=&quot;o&quot;>{</span>
+  <span class=&quot;nd&quot;>@Override</span>
+  <span class=&quot;kd&quot;>protected</span> <span class=&quot;kt&quot;>void</span> <span class=&quot;nf&quot;>configure</span><span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>HttpSecurity</span> <span class=&quot;n&quot;>http</span><span class=&quot;o&quot;>)</span> <span class=&quot;kd&quot;>throws</span> <span class=&quot;nc&quot;>Exception</span> <span class=&quot;o&quot;>{</span>
+    <span class=&quot;n&quot;>http</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>authorizeRequests</span><span class=&quot;o&quot;>()</span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>antMatchers</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"/users/**"</span><span class=&quot;o&quot;>)</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>hasRole</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"USER"</span><span class=&quot;o&quot;>)</span><span class=&quot;c1&quot;>//USER role can access /users/**       </span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>antMatchers</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"/admin/**"</span><span class=&quot;o&quot;>)</span>
+            <span class=&quot;o&quot;>.(</span><span class=&quot;s&quot;>"hasRole('ROLE_ADMIN')"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>//ADMIN role can access /admin/**</span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>and</span><span class=&quot;o&quot;>()</span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>formLogin</span><span class=&quot;o&quot;>()</span> <span class=&quot;c1&quot;>//enabling formlogin</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>loginPage</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"/login"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>//deafult login page URL</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>failureUrl</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"/login?error"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>//deafult login error URL</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>usernameParameter</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"username"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>// default parameter name of username</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>passwordParameter</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"password"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>// default parameter name of password</span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>and</span><span class=&quot;o&quot;>()</span>
+        <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>logout</span><span class=&quot;o&quot;>()</span>
+            <span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>logoutSuccessUrl</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"/login?logout"</span><span class=&quot;o&quot;>)</span> <span class=&quot;c1&quot;>// redirect URL after logging out</span>
+  <span class=&quot;o&quot;>}</span>
+<span class=&quot;o&quot;>}</span>
+</code></pre></div></div><h2 id="&quot;using-https&quot;">Using HTTPS</h2><p>To use HTTPS, we need an SSL certificate. With Spring Boot we can enable HTTPS with a generated self-signed certificate for testing purposes. In the development phase, there is no easier way to get a certificate. However, to go public, we need publicly signed certificates to identify the service providers authenticity. So it’s not recommended to use self-signed certificate in production. To go public, you will need an SSL (Secure Sockets Layer) certificate from a Certificate Authority. There are some free certificate providers but usually, their support isn’t satisfying. The most reliable and free certificate provider is Let’s Encrypt. It is high quality, widely known and used.</p><p>In the long run it won’t be sufficient but to get started in development, you can generate a self-signed certificate with a certificate management utility called keytool. Use this command:</p><div
+class=&quot;language-plaintext><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code>keytool -genkeypair -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
+</code></pre></div></div><p>This will generate a PKCS12 keystore with a generated certificate, with certificate alias tomcat. Put your generated <code
+class=&quot;language-plaintext>keystore.p12</code> file into your project’s resources directory and add these lines to your application.properties:</p><div
+class=&quot;language-plaintext><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code>server.port = 8888
+# Automatically blocking requests coming from http
+security.require-ssl = true
+server.ssl.key-store = classpath:keystore.p12
+server.ssl.key-alias = tomcat
+server.ssl.key-store-password = yourpassword
+server.ssl.key-store-type = PKCS12
+</code></pre></div></div><p>If you already have your SSL certificate, you can import it to a keystore to enable HTTPS in your Spring Boot app.</p><p><strong>With this command, you can also create a new keystore containing your certificate:</strong></p><div
+class=&quot;language-plaintext><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code>keytool -import -alias tomcat -file myCertificate.crt -keystore keystore.p12 -storepass password
+</code></pre></div></div><h2 id="&quot;the-awesome-built-in-csrf-protection&quot;">The awesome built-in CSRF protection</h2><p>You might be familiar with OWASP’s definition of CSRF: „<a
+href=https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)>Cross-Site Request Forgery</a> is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated. With a little help of social engineering (such as sending a link via email or chat), an attacker may trick the users of a web application into executing actions of the attacker’s choosing.”</p><p>As <a
+href=https://seclab.stanford.edu/websec/csrf/csrf.pdf>Adam Barth et al. wrote</a>, there are three widely used techniques for defending from CSRF attacks:</p><ul><li><em>validating a secret request token:</em> the most popular CSRF defense is including a secret token with each request and validating the received token is correctly bound to the user’s session. This prevents CSRF by forcing the attacker to guess the token of the session.</li><li><em>validating the HTTP Referer header</em> is the simplest CSRF defense that prevents CSRF by accepting requests only from a trusted source</li><li><em>validating custom headers attached to XMLHttpRequests:</em> sites can be defended from CSRF with a custom header set via XMLHttpRequest. Make sure to check the header is present before processing state-modifying requests.</li></ul><p>As <a
+href=https://seclab.stanford.edu/websec/csrf/csrf.pdf>Adam Barth et al.</a> conclude in their article, there are three widely used techniques for defending from CSRF attacks but none of these techniques are satisfactory on their own.</p><p>Spring Boot can prevent a CSRF attack. The CSRF protection is active by default, thus we do not have to configure it explicitly. If you use <em>Thymeleaf</em>, the CSRF token will automatically be added as a hidden input field. With using JSP you have to add it to the form by yourself:</p><div
+class=&quot;language-html><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;nt&quot;>&lt;input</span> <span class=&quot;na&quot;>type=</span><span class=&quot;s&quot;>"hidden"</span> <span class=&quot;na&quot;>name=</span><span class=&quot;s&quot;>"${_csrf.parameterName}"</span> <span class=&quot;na&quot;>value=</span><span class=&quot;s&quot;>"${_csrf.token}"</span><span class=&quot;nt&quot;>/&gt;</span> 
+</code></pre></div></div><p>You can also disable CSRF protection, however, it is not recommended.</p><p>It is recommended to use <code
+class=&quot;language-plaintext>POST</code> requests instead of <code
+class=&quot;language-plaintext>GET</code> to pass CSRF tokens, as by default Spring does not protect <code
+class=&quot;language-plaintext>GET</code> methods. This is a general requirement for proper CSRF prevention. For more details, visit the <a
+href=https://docs.spring.io/spring-security/site/docs/current/reference/html/web-app-security.html#csrf>CSRF Spring Documentation</a>.</p><p><strong>There are different CSRF protection types that Spring offers:</strong></p><h3 id="&quot;stateful-csrf-protection&quot;">Stateful CSRF protection</h3><p>In this case, the backend generates a token and sends it to the user’s browser that has to be copied to an HTTP header before a request to an API endpoint is made.<br> The server has to compare the token appearing in the header with the one it sent to the browser. If the tokens are equal, then it is accepted. This works because an evil website is not able to read the browser’s cookie that contains the CSRF-protection token and to copy it to the HTTP header.</p><h3 id="&quot;stateless-csrf-protection&quot;">Stateless CSRF protection</h3><p>If maintaining the state for CSRF token at server side is problematic, it is still possible to check that the tokens are the same in order to make sure the API request is not a CSRF attack. The client’s browser generates a (cryptographically strong) pseudorandom value and sets it as a cookie on the user’s side, separately from the session identifier. This value is sent with the request to the backend API as a hidden form value or another request parameter or header. If the values are not equal, the server will reject the request. This way of protection can be implemented by creating a new filter.</p><h3 id="&quot;samesite-cookie-attribute&quot;">Samesite cookie attribute</h3><p>Definition by OWASP: “SameSite prevents the browser from sending the cookie along with cross-site requests. The main goal is mitigating the risk of cross-origin information leakage. It also provides some protection against cross-site request forgery attacks.”</p><p>Possible values for the flag are:</p><ul><li>Lax: with this value defined the server maintains the user’s logged-in session after the user arrives from an external link</li><li>Strict: it will prevent the browser from sending the cookie to the target site in all cross-site browsing context</li></ul><p><strong>In Spring Security you can easily do this with a filter, like this:</strong></p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;kd&quot;>public</span> <span class=&quot;kd&quot;>class</span> <span class=&quot;nc&quot;>SameSiteFilter</span> <span class=&quot;kd&quot;>extends</span> <span class=&quot;nc&quot;>GenericFilterBean</span> <span class=&quot;o&quot;>{</span>
+    <span class=&quot;nd&quot;>@Override</span>
+    <span class=&quot;kd&quot;>public</span> <span class=&quot;kt&quot;>void</span> <span class=&quot;nf&quot;>doFilter</span> <span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>ServletRequest</span> <span class=&quot;n&quot;>request</span><span class=&quot;o&quot;>,</span>  <span class=&quot;nc&quot;>ServletResponse</span> <span class=&quot;n&quot;>response</span><span class=&quot;o&quot;>,</span> <span class=&quot;nc&quot;>FilterChain</span> <span class=&quot;n&quot;>chain</span><span class=&quot;o&quot;>)</span> <span class=&quot;kd&quot;>throws</span> <span class=&quot;nc&quot;>IOException</span><span class=&quot;o&quot;>,</span> <span class=&quot;nc&quot;>ServletException</span> <span class=&quot;o&quot;>{</span>
+        <span class=&quot;nc&quot;>HttpServletResponse</span> <span class=&quot;n&quot;>resp</span> <span class=&quot;o&quot;>=</span> <span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>HttpServletResponse</span><span class=&quot;o&quot;>)</span> <span class=&quot;n&quot;>response</span><span class=&quot;o&quot;&gt;;&lt;/span>
+        <span class=&quot;n&quot;>resp</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>setHeader</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"Set-Cookie"</span><span class=&quot;o&quot;>,</span> <span class=&quot;s&quot;>"HttpOnly; SameSite=strict"</span><span class=&quot;o&quot;&gt;);&lt;/span>
+        <span class=&quot;n&quot;>chain</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>doFilter</span><span class=&quot;o&quot;>(</span><span class=&quot;n&quot;>request</span><span class=&quot;o&quot;>,</span> <span class=&quot;n&quot;>response</span>
+    <span class=&quot;o&quot;>}</span>
+<span class=&quot;o&quot;>}</span>
+</span></span></code></pre></div></div><p>Then add this filter to your SecurityConfig class:</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;n&quot;>http</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>addFilterAfter</span><span class=&quot;o&quot;>(</span><span class=&quot;k&quot;>new</span> <span class=&quot;nc&quot;>SameSiteFilter</span><span class=&quot;o&quot;>(),</span> <span class=&quot;nc&quot;>BasicAuthenticationFilter</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>class</span><span class=&quot;o&quot;>)</span>
+</code></pre></div></div><p>Although Spring Security provides a comprehensive toolkit to prevent the most common types of CSRF attacks, it can also be tricked with subdomain takeover and man in the middle attack because the tokens are not tied to the user identity and are not signed. To mitigate this do not expose an HTTP endpoint, only HTTPS and do not allow external content on subdomains.</p><p>On Avatao platform you can get a deeper understanding of the <a
+href=https://platform.avatao.com/paths/d667233e-ed36-40cc-9491-8aa29e25fdc1/challenges/f16b087e-7520-4204-a135-958da1235005>CSRF protection</a>.</p><h2 id="&quot;method-level-authorization&quot;">Method-level Authorization</h2><p>Sometimes we need to secure methods with Java configuration. Using <code
+class=&quot;language-plaintext>@EnableGlobalMethodSecurity</code> annotation we can ensure the security of the service layer. By defining roles, we can assure that users can only execute or trigger specific methods.</p><p>For method level authorization, first, we need:</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;nd&quot;>@Configuration</span>
+<span class=&quot;nd&quot;>@EnableGlobalMethodSecurity</span><span class=&quot;o&quot;>(</span>
+  <span class=&quot;n&quot;>prePostEnabled</span> <span class=&quot;o&quot;>=</span> <span class=&quot;kc&quot;>true</span><span class=&quot;o&quot;>,</span> 
+  <span class=&quot;n&quot;>securedEnabled</span> <span class=&quot;o&quot;>=</span> <span class=&quot;kc&quot;>true</span><span class=&quot;o&quot;>,</span> 
+  <span class=&quot;n&quot;>jsr250Enabled</span> <span class=&quot;o&quot;>=</span> <span class=&quot;kc&quot;>true</span><span class=&quot;o&quot;>)</span>
+<span class=&quot;kd&quot;>public</span> <span class=&quot;kd&quot;>class</span> <span class=&quot;nc&quot;>MethodSecurityConfig</span> <span class=&quot;kd&quot;>extends</span> <span class=&quot;nc&quot;>GlobalMethodSecurityConfiguration</span> <span class=&quot;o&quot;>{</span>
+	<span class=&quot;c1&quot;>//...</span>
+<span class=&quot;o&quot;>}</span>
+</code></pre></div></div><p><code
+class=&quot;language-plaintext>prePostEnabled</code> is for enabling Spring Security pre and post annotations. With <code
+class=&quot;language-plaintext>securedEnabled</code> , we can enable the <code
+class=&quot;language-plaintext>@Secured</code> annotation. The <code
+class=&quot;language-plaintext>jsr250Enabled</code> property allows us to use the <code
+class=&quot;language-plaintext>@RoleAllowed annotation</code>.</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;kd&quot;>public</span> <span class=&quot;kd&quot;>interface</span> <span class=&quot;nc&quot;>FlightService</span> <span class=&quot;o&quot;>{</span>
+	<span class=&quot;nc&quot;>List</span><span class=&quot;o&quot;>&lt;</span><span class=&quot;nc&quot;>Flight</span><span class=&quot;o&quot;>&gt;</span> <span class=&quot;nf&quot;>findAll</span><span class=&quot;o&quot;&gt;();&lt;/span>
+    
+	<span class=&quot;nd&quot;>@Secured</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"ROLE_ADMIN"</span><span class=&quot;o&quot;>)</span>
+	<span class=&quot;kt&quot;>void</span> <span class=&quot;nf&quot;>updateFlight</span><span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>Flight</span> <span class=&quot;n&quot;>flight</span><span class=&quot;o&quot;&gt;);&lt;/span>
+    
+	<span class=&quot;nd&quot;>@Secured</span><span class=&quot;o&quot;>({</span> <span class=&quot;s&quot;>"ROLE_USER"</span><span class=&quot;o&quot;>,</span> <span class=&quot;s&quot;>"ROLE_ADMIN"</span> <span class=&quot;o&quot;>})</span>
+	<span class=&quot;kt&quot;>void</span> <span class=&quot;nf&quot;>makeReservationForFlight</span><span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>Flight</span> <span class=&quot;n&quot;>flight</span>
+<span class=&quot;o&quot;>}</span>
+</span></span></code></pre></div></div><p>We can define a list of security configuration attributes for service methods with <code
+class=&quot;language-plaintext>@Secured</code> annotation. If anyone tries to invoke a method and does not possess the required roles/permissions, an <code
+class=&quot;language-plaintext>AccessDenied</code> exception will be thrown. In the above example, anyone with an <code
+class=&quot;language-plaintext>ADMIN</code> role can invoke the <code
+class=&quot;language-plaintext>updateFlight</code> method. For <code
+class=&quot;language-plaintext>makeReservationForFlight</code> method both <code
+class=&quot;language-plaintext>USER</code> or <code
+class=&quot;language-plaintext>ADMIN</code> roles are appropriate.</p><h2 id="&quot;encoding-sensitive-data&quot;">Encoding sensitive data</h2><p>Storing passwords as plain text is perhaps one of the worst security practices and by default forbidden by Spring Security. There are a few encoding mechanisms Spring Security supports, like SHA256, SHA512, PBKDF2, BCrypt, and SCrypt. In our example, we will use BCrypt, one of the best available solutions. The <code
+class=&quot;language-plaintext>PasswordEncoder</code> interface has only two methods: <code
+class=&quot;language-plaintext>encodePassword</code> and <code
+class=&quot;language-plaintext>isPasswordValid</code>.</p><p>You can encode the password during authentication by defining a <code
+class=&quot;language-plaintext>PasswordEncoder</code> bean in the security configuration class:</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;kd&quot;>public</span> <span class=&quot;kd&quot;>class</span> <span class=&quot;nc&quot;>SecurityConfig</span> <span class=&quot;kd&quot;>extends</span> <span class=&quot;nc&quot;>WebSecurityConfigurerAdapter</span><span class=&quot;o&quot;>{</span>
+<span class=&quot;c1&quot;>//...</span>
+<span class=&quot;nd&quot;>@Bean</span>
+   <span class=&quot;kd&quot;>public</span> <span class=&quot;nc&quot;>PasswordEncoder</span> <span class=&quot;nf&quot;>encoder</span><span class=&quot;o&quot;>()</span> <span class=&quot;o&quot;>{</span>
+       <span class=&quot;k&quot;>return</span> <span class=&quot;k&quot;>new</span> <span class=&quot;nf&quot;>BCryptPasswordEncoder</span><span class=&quot;o&quot;>(</span><span class=&quot;mi&quot;>11</span><span class=&quot;o&quot;&gt;);&lt;/span>
+   <span class=&quot;o&quot;>}</span>
+<span class=&quot;c1&quot;>//...</span>
+   <span class=&quot;nd&quot;>@Override</span>
+   <span class=&quot;kd&quot;>protected</span> <span class=&quot;kt&quot;>void</span> <span class=&quot;nf&quot;>configure</span><span class=&quot;o&quot;>(</span><span class=&quot;nc&quot;>AuthenticationManagerBuilder</span> <span class=&quot;n&quot;>auth</span><span class=&quot;o&quot;>)</span> <span class=&quot;kd&quot;>throws</span> <span class=&quot;nc&quot;>Exception</span> <span class=&quot;o&quot;>{</span>
+      <span class=&quot;n&quot;>auth</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>userDetailsService</span><span class=&quot;o&quot;>(</span>
+	<span class=&quot;n&quot;>auth</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>getDefaultUserDetailsService</span><span class=&quot;o&quot;>()).</span><span class=&quot;na&quot;>passwordEncoder</span><span class=&quot;o&quot;>(</span><span class=&quot;n&quot;>encoder</span><span class=&quot;o&quot;>());</span>
+   <span class=&quot;o&quot;>}</span>
+<span class=&quot;o&quot;>}</span>
+</span></code></pre></div></div><p>The Spring provides a simple solution to encode the password in the database. Let’s see how to store a user with encoded password:</p><div
+class=&quot;language-java><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code><span class=&quot;kn&quot;>import</span> <span class=&quot;nn&quot;>org.springframework.security.crypto.password.PasswordEncoder</span><span class=&quot;o&quot;&gt;;&lt;/span>
+<span class=&quot;c1&quot;>//...</span>
+<span class=&quot;nd&quot;>@Autowired</span> <span class=&quot;nc&quot;>PasswordEncoder</span> <span class=&quot;n&quot;>passwordEncoder</span>
+<span class=&quot;c1&quot;>//...	</span>
+<span class=&quot;nc&quot;>User</span> <span class=&quot;n&quot;>john</span> <span class=&quot;o&quot;>=</span> <span class=&quot;k&quot;>new</span> <span class=&quot;nc&quot;>User</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"john"</span><span class=&quot;o&quot;>,</span> <span class=&quot;n&quot;>passwordEncoder</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>encode</span><span class=&quot;o&quot;>(</span><span class=&quot;s&quot;>"johnny1"</span><span class=&quot;o&quot;&gt;));&lt;/span>
+<span class=&quot;nc&quot;>List</span><span class=&quot;o&quot;>&lt;</span><span class=&quot;nc&quot;>User</span><span class=&quot;o&quot;>&gt;</span> <span class=&quot;n&quot;>users</span> <span class=&quot;o&quot;>=</span> <span class=&quot;k&quot;>new</span> <span class=&quot;nc&quot;>ArrayList</span><span class=&quot;o&quot;>&lt;&gt;();</span>
+<span class=&quot;n&quot;>users</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>add</span><span class=&quot;o&quot;>(</span><span class=&quot;n&quot;>john</span><span class=&quot;o&quot;&gt;);&lt;/span>
+<span class=&quot;n&quot;>userRepository</span><span class=&quot;o&quot;>.</span><span class=&quot;na&quot;>save</span><span class=&quot;o&quot;>(</span><span class=&quot;n&quot;>users</span>
+</span></span></span></code></pre></div></div><h2 id="&quot;avoiding-xss-attacks&quot;">Avoiding XSS Attacks</h2><p>When an XSS (Cross-Site Scripting) attack is performed, a malicious script is injected into a website usually by using an input field to send the malicious code. There are a wide range of XSS attack vectors, however, we can avoid most of these by choosing proper web frameworks, input validators/filters/encoders and right configurations such as <a
+href=https://docs.spring.io/spring-security/site/docs/current/reference/html/web-app-security.html#headers-csp>Content Security Policy</a> (CSP).<br> Spring Security allows users to efficiently inject the default security headers.</p><p>Current Default Security Headers provided by Spring Security:</p><ul><li>Cache-Control</li><li>Content-Type Options</li><li>HTTP Strict Transport Security</li><li>X-Frame-Options</li><li>X-XSS-Protection</li></ul><p>With using Spring configuration, all default security headers are set.</p><h2 id="&quot;avoiding-clickjacking&quot;">Avoiding clickjacking</h2><p>Clickjacking is a technique of tricking a web-user into clicking on something different from what the user perceives. This – usually malicious – click is triggering an action in a hidden or transparent iframe. For example, a logged in user in a bank’s system might click on a button that gives access to someone else. Allowing your website to be shown in an iframe can create a new attack vector for clickjacking.</p><p>There are some ways to avoid clickjacking actions. You can use frame breaking code, however, a more modern approach is suggested to avoid clickjacking with the X-Frame-Options header set to <code
+class=&quot;language-plaintext>DENY</code>. Luckily, Spring Security automatically sets the X-Frame-Options to <code
+class=&quot;language-plaintext>DENY</code>, thus whenever you need to change it, you will need to do so it explicitly.</p><p>We can also selectively enable, disable or define the <code
+class=&quot;language-plaintext>sameorigin</code> option with Java annotations, adding the required header:</p><div
+class=&quot;language-plaintext><div
+class=&quot;highlight&quot;><pre class=&quot;highlight&quot;><code>@EnableWebSecurity
+@Configuration
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.headers().frameOptions().sameOrigin(); // or disable()
+  }
+}
+</code></pre></div></div><p>Here are available options for policy:</p><p><code
+class=&quot;language-plaintext>DENY</code> This is the default value. The page cannot be displayed in a frame, regardless of the site attempting to do so.<br> <code
+class=&quot;language-plaintext>SAMEORIGIN</code> The page can be displayed in a frame on the same origin as the page itself<br> <code
+class=&quot;language-plaintext>ALLOW-FROM</code> It is possible to define an origin, where the page can be displayed in a frame</p></div></div></div></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_3    et_pb_css_mix_blend_mode_passthrough et_pb_column_empty"></div></div></div><div
+class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_1"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_right et_pb_bg_layout_dark"><div
+class=et_pb_text_inner><h1 style="text-align: center;">Test your secure coding skills</h1></div></div><div
+class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module ">
+<a
+class="et_pb_button et_pb_button_0 et_animated et_hover_enabled et_pb_bg_layout_dark" href=http://next.avatao.com/trial target=_blank>Try for free</a></div></div></div></div><div
+class="et_pb_section et_pb_section_3 et_hover_enabled et_section_regular" ><div
+class="et_pb_row et_pb_row_2 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h2>Related Articles</h2></div></div></div><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left et_pb_module ">
+<a
+class="et_pb_button et_pb_button_1 et_hover_enabled et_pb_bg_layout_light" href=../blog/index.html >Browse All Categories</a></div></div></div><div
+class="et_pb_row et_pb_row_3 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_with_border et_pb_module et_pb_blog_0 et_pb_blog_grid_wrapper"><div
+class="et_pb_blog_grid clearfix "><div
+class=et_pb_ajax_pagination_container><div
+class=et_pb_salvattore_content data-columns><article
+id=post-4164 class="et_pb_post clearfix et_pb_blog_item_0_0 post-4164 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices category-skills-needed-for-cybersecurity"><div
+class=et_pb_image_container><a
+href=../5-best-practices-to-successfully-implement-training-as-part-of-your-security-program/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="5 best practices to successfully implement training as part of your security program"     width=400 height=250 data-src=https://avatao.com/media/enterprise-security-program-400x250.png loading=lazy data-srcset="https://avatao.com/media/enterprise-security-program.png 479w, https://avatao.com/media/enterprise-security-program-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/enterprise-security-program-400x250.png alt="5 best practices to successfully implement training as part of your security program" class=" lazy" data-srcset="https://avatao.com/media/enterprise-security-program.png 479w, https://avatao.com/media/enterprise-security-program-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../5-best-practices-to-successfully-implement-training-as-part-of-your-security-program/index.html >5 best practices to successfully implement training as part of your security program</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>For most companies, security is considered a side quest, which is partly related to the daily processes. In reality, security ought to be a strong foundation of any organization. To ensure the defense of the enterprise, the relevant teams need strong security knowledge and abilities.</p></div></div></article><article
+id=post-3662 class="et_pb_post clearfix et_pb_blog_item_0_1 post-3662 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices category-skills-needed-for-cybersecurity"><div
+class=et_pb_image_container><a
+href=../5-key-challenges-when-building-a-security-training-program/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="5 Key Challenges When Building a Security Training Program"     width=400 height=250 data-src=https://avatao.com/media/feb04blog2-01-400x250.png loading=lazy data-srcset="https://avatao.com/media/feb04blog2-01.png 479w, https://avatao.com/media/feb04blog2-01-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/feb04blog2-01-400x250.png alt="5 Key Challenges When Building a Security Training Program" class=" lazy" data-srcset="https://avatao.com/media/feb04blog2-01.png 479w, https://avatao.com/media/feb04blog2-01-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../5-key-challenges-when-building-a-security-training-program/index.html >5 Key Challenges When Building a Security Training Program</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>To build an enterprise security program, one has to go back to the well-known fundamentals of organizational change: People, Process, and Technology (originates from Harold Leavitt’s “Applied Organization Change in Industry”, 1964).</p></div></div></article><article
+id=post-1207 class="et_pb_post clearfix et_pb_blog_item_0_2 post-1207 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=et_pb_image_container><a
+href=../getting-started-with-kotlin/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="Getting started with Kotlin"     width=400 height=250 data-src=https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png 479w, https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png alt="Getting started with Kotlin" class=" lazy" data-srcset="https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png 479w, https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../getting-started-with-kotlin/index.html >Getting started with Kotlin</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>If you are working on Java projects you might have heard about other languages that run on the JVM, like Clojure, Kotlin or Scala. Programmers like to try new things out but is it worth it to pick one of them over Java? Is it worth getting started with Kotlin? We're...</p></div></div></article></div></div></div></div></div></div></div><div
+class="et_pb_section et_pb_section_5 et_section_regular" ><div
+class="et_pb_row et_pb_row_4"><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_image et_pb_image_1">
+<span
+class="et_pb_image_wrap "><img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt title=avatao_logo_dark_156x40-14 data-src=https://avatao.com/file/2020/07/avatao_logo_dark_156x40-14.png class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src=https://avatao.com/file/2020/07/avatao_logo_dark_156x40-14.png alt title=avatao_logo_dark_156x40-14 data-eio=l></noscript></span></div><div
+class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-phone et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h2><strong>Follow us</strong></h2></div></div><ul
+class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0 clearfix  et_pb_text_align_center-phone et_pb_bg_layout_light"><li
+class='et_pb_social_media_follow_network_0 et_pb_social_icon et_pb_social_network_link  et-social-facebook et_pb_social_media_follow_network_0'><a
+href=https://www.facebook.com/theavatao/
+class='icon et_pb_with_border'
+title='Follow on Facebook'
+target=_blank><span
+class=et_pb_social_media_follow_network_name
+aria-hidden=true
+>Follow</span></a></li><li
+class='et_pb_social_media_follow_network_1 et_pb_social_icon et_pb_social_network_link  et-social-linkedin et_pb_social_media_follow_network_1'><a
+href=https://www.linkedin.com/company/avatao/
+class='icon et_pb_with_border'
+title='Follow on LinkedIn'
+target=_blank><span
+class=et_pb_social_media_follow_network_name
+aria-hidden=true
+>Follow</span></a></li><li
+class='et_pb_social_media_follow_network_2 et_pb_social_icon et_pb_social_network_link  et-social-twitter et_pb_social_media_follow_network_2'><a
+href=https://twitter.com/theavatao
+class='icon et_pb_with_border'
+title='Follow on Twitter'
+target=_blank><span
+class=et_pb_social_media_follow_network_name
+aria-hidden=true
+>Follow</span></a></li></ul><div
+class="et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-phone et_pb_bg_layout_light"><div
+class=et_pb_text_inner><div
+class="elementor-element elementor-element-2cea6cc9 elementor-column elementor-col-25 elementor-top-column" data-id=2cea6cc9 data-element_type=column><div
+class="elementor-column-wrap  elementor-element-populated"><div
+class=elementor-widget-wrap><div
+class="elementor-element elementor-element-4f047256 elementor-widget elementor-widget-text-editor" data-id=4f047256 data-element_type=widget data-widget_type=text-editor.default><div
+class=elementor-widget-container><div
+class="elementor-text-editor elementor-clearfix"><p><em>Copyright © 2021 Avatao</em></p></div></div></div></div></div></div><div
+class="elementor-element elementor-element-63973893 elementor-column elementor-col-25 elementor-top-column" data-id=63973893 data-element_type=column><div
+class="elementor-column-wrap  elementor-element-populated"><div
+class=elementor-widget-wrap><div
+class="elementor-element elementor-element-5bbc7997 elementor-widget elementor-widget-heading" data-id=5bbc7997 data-element_type=widget data-widget_type=heading.default><div
+class=elementor-widget-container></div></div></div></div></div></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h3>Solutions</h3><ul><li><a
+href=../security-training.html>Security Training</a></li><li><a
+href=../compliance.html>Compliance</a></li><li><a
+href=../topics-we-cover/index.html >Topics We Cover</a></li><li><a
+href=../our-pricing/index.html >Plans</a></li></ul></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h3>Who are we?</h3><ul><li><a
+href=../about/index.html >About</a></li><li><a
+href=../blog/index.html >Blog</a></li><li><a
+href=../case-studies/index.html >Case Studies</a></li><li><a
+href=../about/index.html#investors>Investors</a></li><li><a
+href=../about/index.html#advisors>Advisors</a></li></ul></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h3>Support</h3><ul><li><a
+href=../contact/index.html >Contact</a></li><li><a
+href=../privacy-policy/index.html >Terms of service &amp; policy</a></li><li><a
+href=../cookie-declaration.html>Manage privacy preferences</a></li></ul></div></div></div></div></div></div></div></div></div><div
+class=et_post_meta_wrapper></div></article></div></div></div></div><footer
+id=main-footer><div
+id=footer-bottom><div
+class="container clearfix"><ul
+class=et-social-icons><li
+class="et-social-icon et-social-facebook">
+<a
+href=# class=icon>
+<span>Facebook</span>
+</a></li><li
+class="et-social-icon et-social-twitter">
+<a
+href=# class=icon>
+<span>Twitter</span>
+</a></li><li
+class="et-social-icon et-social-google-plus">
+<a
+href=# class=icon>
+<span>Google</span>
+</a></li><li
+class="et-social-icon et-social-instagram">
+<a
+href=# class=icon>
+<span>Instagram</span>
+</a></li><li
+class="et-social-icon et-social-rss">
+<a
+href=../feed/index.html class=icon>
+<span>RSS</span>
+</a></li></ul></div></div></footer></div></div><noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-KWMT35N"
+height=0 width=0 style=display:none;visibility:hidden></iframe></noscript>
+ <script>var et_animation_data=[{"class":"et_pb_button_0","style":"zoom","repeat":"once","duration":"1000ms","delay":"100ms","intensity":"10%","starting_opacity":"0%","speed_curve":"ease-in-out"}];</script> <link
+rel=stylesheet id=mediaelement-css  href='../includes/js/mediaelement/mediaelementplayer-legacy.min08e1.css?ver=4.2.16' type=text/css media=all><link
+rel=stylesheet id=wp-mediaelement-css  href='../includes/js/mediaelement/wp-mediaelement.mind96d.css?ver=5.6.1' type=text/css media=all> <script id=contact-form-7-js-extra>var wpcf7={"apiSettings":{"root":"https:\/\/avatao.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};</script> <script src='../xoojeeny/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2' id=contact-form-7-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka&amp;ver=3.0' id=google-recaptcha-js></script> <script id=wpcf7-recaptcha-js-extra>var wpcf7_recaptcha={"sitekey":"6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka","actions":{"homepage":"homepage","contactform":"contactform"}};</script> <script src='../xoojeeny/contact-form-7/modules/recaptcha/script9dff.js?ver=5.3.2' id=wpcf7-recaptcha-js></script> <script src='../includes/js/comment-reply.mind96d.js?ver=5.6.1' id=comment-reply-js></script> <script id=divi-custom-script-js-extra>var DIVI={"item_count":"%d Item","items_count":"%d Items"};var et_shortcodes_strings={"previous":"Previous","next":"Next"};var et_pb_custom={"ajaxurl":"https:\/\/avatao.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/avatao.com\/template\/images","builder_images_uri":"https:\/\/avatao.com\/template\/includes\/builder\/images","et_frontend_nonce":"096d04d563","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"4678cbf7e1","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"1036","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""};var et_builder_utils_params={"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};var et_frontend_scripts={"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};var et_pb_box_shadow_elements=[];var et_pb_motion_elements={"desktop":[],"tablet":[],"phone":[]};var et_pb_sticky_elements=[];</script> <script src='../template/js/custom.unified89df.js?ver=4.6.0' id=divi-custom-script-js></script> <script src='../xoojeeny/cf7-styler-for-divi/scripts/frontend-bundle.min8a54.js?ver=1.0.0' id=cf7-styler-frontend-bundle-js></script> <script src='../template/core/admin/js/common89df.js?ver=4.6.0' id=et-core-common-js></script> <script src='../includes/js/wp-embed.mind96d.js?ver=5.6.1' id=wp-embed-js></script> <script id=mediaelement-core-js-before>var mejsL10n={"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};</script> <script src='../includes/js/mediaelement/mediaelement-and-player.min08e1.js?ver=4.2.16' id=mediaelement-core-js></script> <script src='../includes/js/mediaelement/mediaelement-migrate.mind96d.js?ver=5.6.1' id=mediaelement-migrate-js></script> <script id=mediaelement-js-extra>var _wpmejsSettings={"pluginPath":"\/includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};</script> <script src='../includes/js/mediaelement/wp-mediaelement.mind96d.js?ver=5.6.1' id=wp-mediaelement-js></script> <script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js></script></body>
+<!-- Mirrored from avatao.com/secure-development-with-spring-framework/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:08:01 GMT -->
+</html>

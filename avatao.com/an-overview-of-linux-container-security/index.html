@@ -1,0 +1,238 @@
+<!DOCTYPE html><html
+lang=en-US>
+<!-- Mirrored from avatao.com/an-overview-of-linux-container-security/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:07:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><link
+rel=stylesheet href=../content/cache/minify/index.html media=all> <script defer src=../content/cache/minify/b0459.default.include.e8b74a.js></script> <style>img.lazy{min-height:1px}</style><link
+rel=preload href=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js as=script><meta
+charset="UTF-8"><meta
+http-equiv="X-UA-Compatible" content="IE=edge"><link
+rel=pingback href=../xmlrpc.php> <script>document.documentElement.className='js';</script> <script id=Cookiebot src=https://consent.cookiebot.com/uc.js    data-cbid=f7ab1fd0-7ef1-4100-9210-b93c0d248a0b data-blockingmode=auto></script><script>var et_site_url='../index.html';var et_post_id='1054';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}</script>  <script data-cfasync=false data-pagespeed-no-defer>var gtm4wp_datalayer_name="dataLayer";var dataLayer=dataLayer||[];</script> <title>An overview of Linux container security - Avatao</title><meta
+name="description" content="Linux container security: What are containers? Linux capabilities, User namespaces, SELinux / AppArmor, Restricting syscalls, Unikerneles"><meta
+name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link
+rel=canonical href=index.html ><meta
+property="og:locale" content="en_US"><meta
+property="og:type" content="article"><meta
+property="og:title" content="An overview of Linux container security - Avatao"><meta
+property="og:description" content="Linux container security: What are containers? Linux capabilities, User namespaces, SELinux / AppArmor, Restricting syscalls, Unikerneles"><meta
+property="og:url" content="https://avatao.com/an-overview-of-linux-container-security/"><meta
+property="og:site_name" content="Avatao"><meta
+property="article:publisher" content="https://www.facebook.com/theavatao"><meta
+property="article:published_time" content="2019-01-15T09:49:35+00:00"><meta
+property="article:modified_time" content="2021-02-12T15:10:35+00:00"><meta
+property="og:image" content="https://avatao.com/media/2020/07/Dockerblog_lg.png"><meta
+property="og:image:width" content="1921"><meta
+property="og:image:height" content="1081"><meta
+name="twitter:card" content="summary_large_image"><meta
+name="twitter:creator" content="@theavatao"><meta
+name="twitter:site" content="@theavatao"> <script type=application/ld+json class=yoast-schema-graph>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://avatao.com/#website","url":"https://avatao.com/","name":"Avatao","description":"Interactive secure coding training","potentialAction":[{"@type":"SearchAction","target":"https://avatao.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://avatao.com/an-overview-of-linux-container-security/#primaryimage","inLanguage":"en-US","url":"https://avatao.com/media/2020/07/Dockerblog_lg.png","width":1921,"height":1081,"caption":"linux container security"},{"@type":"WebPage","@id":"https://avatao.com/an-overview-of-linux-container-security/#webpage","url":"https://avatao.com/an-overview-of-linux-container-security/","name":"An overview of Linux container security - Avatao","isPartOf":{"@id":"https://avatao.com/#website"},"primaryImageOfPage":{"@id":"https://avatao.com/an-overview-of-linux-container-security/#primaryimage"},"datePublished":"2019-01-15T09:49:35+00:00","dateModified":"2021-02-12T15:10:35+00:00","author":{"@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435"},"description":"Linux container security: What are containers? Linux capabilities, User namespaces, SELinux / AppArmor, Restricting syscalls, Unikerneles","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://avatao.com/an-overview-of-linux-container-security/"]}]},{"@type":"Person","@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435","name":"awataoadmin","image":{"@type":"ImageObject","@id":"https://avatao.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/c623e99bd04d7916c98927d1d5ae0587?s=96&d=mm&r=g","caption":"awataoadmin"},"sameAs":["https://avatao.com"]}]}</script> <link
+rel=dns-prefetch href=http://www.google.com/><link
+rel=dns-prefetch href=http://fonts.googleapis.com/><link
+rel=dns-prefetch href=http://s.w.org/><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Feed" href=../feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Comments Feed" href=../comments/feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; An overview of Linux container security Comments Feed" href=feed/index.html > <script>window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/avatao.com\/includes\/js\/wp-emoji-release.min.js?ver=5.6.1"}};!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);</script> <style>img.wp-smiley,img.emoji{display:inline !important;border:none !important;box-shadow:none !important;height:1em !important;width:1em !important;margin:0 .07em !important;vertical-align:-0.1em !important;background:none !important;padding:0 !important}</style><link
+rel=stylesheet id=wp-block-library-css  href='../includes/css/dist/block-library/style.mind96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-grid-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/cf7-gridd96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-module-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/moduled96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=contact-form-7-css  href='../xoojeeny/contact-form-7/includes/css/styles9dff.css?ver=5.3.2' type=text/css media=all><link
+rel=stylesheet id=monsterinsights-popular-posts-style-css  href='../xoojeeny/google-analytics-for-wordpress/assets/css/frontend.minc6b6.css?ver=7.13.0' type=text/css media=all><link
+rel=stylesheet id=divi-style-css  href='../template/allskin89df.css?ver=4.6.0' type=text/css media=all><link
+rel=stylesheet id=cf7-styler-styles-css  href='../xoojeeny/cf7-styler-for-divi/styles/style.min8a54.css?ver=1.0.0' type=text/css media=all><link
+rel=stylesheet id=et-builder-googlefonts-cached-css  href='https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWork+Sans%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900&amp;subset=latin%2Clatin-ext&amp;display=swap&amp;ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dashicons-css  href='../includes/css/dashicons.mind96d.css?ver=5.6.1' type=text/css media=all> <script src='../includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id=jquery-core-js></script> <script src='../includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id=jquery-migrate-js></script> <script src='../xoojeeny/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker0455.js?ver=1.11.6' id=gtm4wp-form-move-tracker-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo&amp;ver=5.6.1' id=recaptcha-v3-js></script> <script src='../template/core/admin/js/es6-promise.auto.mind96d.js?ver=5.6.1' id=es6-promise-js></script> <script id=et-core-api-spam-recaptcha-js-extra>var et_core_api_spam_recaptcha={"site_key":"6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo","page_action":{"action":"an_overview_of_linux_container_security"}};</script> <script src='../template/core/admin/js/recaptchad96d.js?ver=5.6.1' id=et-core-api-spam-recaptcha-js></script> <script id=eio-lazy-load-js-extra>var eio_lazy_vars={"exactdn_domain":"","skip_autoscale":"0"};</script> <script src='../xoojeeny/ewww-image-optimizer/includes/lazysizes.min8e09.js?ver=582.0' id=eio-lazy-load-js></script> <link
+rel=EditURI type=application/rsd+xml title=RSD href=../xmlrpc0db0.php?rsd><link
+rel=shortlink href='../indexd030.html?p=1054'><link
+rel=alternate type=application/json+oembed href="../wp-json/oembed/1.0/embeda81c.json?url=https%3A%2F%2Favatao.com%2Fan-overview-of-linux-container-security%2F"><link
+rel=alternate type=text/xml+oembed href="../wp-json/oembed/1.0/embedc336?url=https%3A%2F%2Favatao.com%2Fan-overview-of-linux-container-security%2F&amp;format=xml"><style>.entry-meta{display:none !important}.home .entry-meta{display:none}.entry-footer{display:none !important}.home .entry-footer{display:none}</style>
+ <script data-cfasync=false data-pagespeed-no-defer>var dataLayer_content={"pagePostType":"post","pagePostType2":"single-post","pageCategory":["secure-coding-best-practices"],"pagePostAuthor":"awataoadmin"};dataLayer.push(dataLayer_content);</script> <script data-cfasync=false>/*<![CDATA[*/(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KWMT35N');/*]]>*/</script> <meta
+name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><noscript><style>.lazyload[data-src]{display:none !important}</style></noscript><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-150x150.png sizes=32x32><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png sizes=192x192><link
+rel=apple-touch-icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png><meta
+name="msapplication-TileImage" content="https://avatao.com/media/2020/08/cropped-Avatao-favicon-300x300.png"><link
+rel=stylesheet id=et-core-unified-1054-cached-inline-styles href=../content/et-cache/1054/et-core-unified-1054-16140242652186.min.css onerror="et_core_page_resource_fallback(this, true)" onload=et_core_page_resource_fallback(this)></head><body
+class="post-template-default single single-post postid-1054 single-format-standard et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css"><div
+id=page-container><header
+id=main-header data-height-onload=66><div
+class="container clearfix et_menu_container"><div
+class=logo_container>
+<span
+class=logo_helper></span>
+<a
+href=../index.html >
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=Avatao id=logo data-height-percentage=54 data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png alt=Avatao id=logo data-height-percentage=54 data-eio=l></noscript>
+</a></div><div
+id=et-top-navigation data-height=66 data-fixed-height=40><nav
+id=top-menu-nav><ul
+id=top-menu class=nav><li
+id=menu-item-1458 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1458"><a
+href="../index0a89.html?page_id=907">Solutions</a><ul
+class=sub-menu><li
+id=menu-item-4059 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4059"><a
+href=../security-training/index.html >Security training</a></li><li
+id=menu-item-4318 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4318"><a
+href=../compliance/index.html >Compliance</a></li></ul></li><li
+id=menu-item-1721 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1721"><a
+href=../topics-we-cover/index.html >Topics we cover</a></li><li
+id=menu-item-1448 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1448"><a
+href=../case-studies/index.html >Resources</a><ul
+class=sub-menu><li
+id=menu-item-3850 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3850"><a
+href=../blog/index.html >Blog</a></li><li
+id=menu-item-1445 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1445"><a
+href=../case-studies/index.html >Case studies</a></li><li
+id=menu-item-2740 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2740"><a
+href=../how-to-build-security-advantage-from-bugs.html>Ebooks</a></li></ul></li><li
+id=menu-item-3897 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3897"><a
+href=../our-pricing/index.html >Plans</a></li><li
+id=menu-item-3581 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3581"><a
+href=../contact/index.html >Contact</a></li><li
+id=menu-item-1450 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1450"><a
+href=https://next.avatao.com/>Login</a></li><li
+id=menu-item-3121 class="menu_button menu-item menu-item-type-custom menu-item-object-custom menu-item-3121"><a
+href=https://next.avatao.com/trial>Try for free</a></li></ul></nav><div
+id=et_top_search>
+<span
+id=et_search_icon></span></div><div
+id=et_mobile_nav_menu><div
+class="mobile_nav closed">
+<span
+class=select_page>Select Page</span>
+<span
+class="mobile_menu_bar mobile_menu_bar_toggle"></span></div></div></div></div><div
+class=et_search_outer><div
+class="container et_search_form_container"><form
+role=search method=get class=et-search-form action=https://avatao.com/ >
+<input
+type=search class=et-search-field placeholder="Search &hellip;" value name=s title="Search for:"></form>
+<span
+class=et_close_search_field></span></div></div></header><div
+id=et-main-area><div
+id=main-content><div
+class=container><div
+id=content-area class=clearfix><div
+id=left-area><article
+id=post-1054 class="et_pb_post post-1054 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=entry-content><div
+id=et-boc class=et-boc><div
+class="et-l et-l--post"><div
+class="et_builder_inner_content et_pb_gutters3"><div
+class="et_pb_section et_pb_section_0 et_section_regular" ><div
+class="et_pb_row et_pb_row_0 et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner>An overview of Linux container security</div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_blurb et_pb_blurb_0 et_hover_enabled  et_pb_text_align_center  et_pb_blurb_position_left et_pb_bg_layout_light"><div
+class=et_pb_blurb_content><div
+class=et_pb_blurb_container><h4 class="et_pb_module_header"><span>Written by Dávid Osztertág</span></h4></div></div></div></div></div></div><div
+class="et_pb_section et_pb_section_1 et_hover_enabled et_section_specialty" ><div
+class="et_pb_row et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_2   et_pb_specialty_column  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_row_inner et_pb_row_inner_0 et_hover_enabled"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_0 et_hover_enabled et-last-child"><div
+class="et_pb_module et_pb_image et_pb_image_0">
+<span
+class="et_pb_image_wrap "><img
+alt="linux container security" title=Dockerblog_lg srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src=https://avatao.com/media/2020/07/Dockerblog_lg.png data-srcset="https://avatao.com/media/2020/07/Dockerblog_lg.png 1921w, https://avatao.com/media/2020/07/Dockerblog_lg-1280x720.png 1280w, https://avatao.com/media/2020/07/Dockerblog_lg-980x551.png 980w, https://avatao.com/media/2020/07/Dockerblog_lg-480x270.png 480w" data-sizes=auto class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201921%201081'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/Dockerblog_lg.png alt="linux container security" title=Dockerblog_lg data-srcset="https://avatao.com/media/2020/07/Dockerblog_lg.png 1921w, https://avatao.com/media/2020/07/Dockerblog_lg-1280x720.png 1280w, https://avatao.com/media/2020/07/Dockerblog_lg-980x551.png 980w, https://avatao.com/media/2020/07/Dockerblog_lg-480x270.png 480w" data-sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1921px, 100vw" data-eio=l></noscript></span></div><div
+class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><p><span
+style="font-size: 19px;">Containers are often treated as if they were virtual machines which is far from the truth, they are a lot less isolated from the host system. However, there are a myriad of ways to enhance isolation. This blog post will give you an overview of Linux container security.</span></p><div
+class=blog_content><p>&nbsp;</p><h2 id="&quot;what-are-containers&quot;">What are containers?</h2><p>So what is the difference between containers and virtual machines? Containerization is operating-system-level virtualization where containers are isolated user-space instances that share the host system’s kernel. This means the kernel is the most important attack vector in your system. Virtual machines, on the other hand, are fully virtualized [HVM], including the kernel and hardware emulation. Of course, the main advantage of containers is less overhead and better scalability but that doesn’t mean you have to give up on security.</p><h2>Get started with Linux container security</h2><p>&nbsp;</p><h2 id="&quot;linux-capabilities&quot;">Linux capabilities</h2><p>You should not run any process as root in containers. Instead, use Linux <a
+href=http://man7.org/linux/man-pages/man7/capabilities.7.html>capabilities</a> and drop every capability that you do not need. There are dangerous capabilities that should be avoided, such as SYS_ADMIN which essentially gives you root access. <a
+href=_https_/en.wikipedia.org/wiki/Setuid.html>SETUID</a> executables also pose a threat because they are often exploited to elevate privileges. If you need these capabilities you can still set the <a
+href=https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt>no-new-privileges</a> security option which will prevent child processes from gaining additional privileges. Better yet, build container images that do not ship SUID binaries.</p><h2 id="&quot;user-namespaces&quot;">User namespaces</h2><p>Linux containers are based on cgroups and namespaces such as the mount, pid or network namespaces. A new addition is the user namespace which remaps a range of user IDs in a namespace to another range on the host. This means root in a container (UID 0) will have an arbitrary high user ID on the host. User namespaces also make it possible to create containers as a regular user, without root privileges.</p><h2 id="&quot;selinux--apparmor&quot;">SELinux / AppArmor</h2><p><a
+href=https://en.wikipedia.org/wiki/Mandatory_access_control>Mandatory Access Control</a> such as SELinux or AppArmor can help further lock down containers. For example, with SELinux every container has its own multi-level label and they can only access their own resources and read /usr and /etc on the host if something is bind mounted into the container. Docker has the <code
+class=&quot;language-plaintext>z</code> (for every container) and the <code
+class=&quot;language-plaintext>Z</code> (for a single container) volume mount flags for ease of use so you don’t have to relabel files manually.</p><h2 id="&quot;restricting-syscalls&quot;">Restricting syscalls</h2><p>The Linux kernel has a feature called <a
+href=https://en.wikipedia.org/wiki/Seccomp>SECCOMP</a> to restrict which syscalls can a process call to greatly reduce the attack surface on the kernel. However, it can be a lengthy process to determine all the syscalls that are needed by a complex application. Docker comes with a sensible default profile that is good for most containerized applications.</p><h2 id="&quot;resource-constraints&quot;">Resource constraints</h2><p>Setting resource limits on containers helps to protect the host and other containers from misbehaving containers or Denial-of-Service attacks. You can finetune CPU, memory, IO limits and ulimits (number of open files or processes) for every container. Furthermore, running containers with read-only root filesystems ensures only volumes can be written and helps when you have to inspect a compromised container.</p><h2 id="&quot;development-pipeline&quot;">Development pipeline</h2><p>Container images should be handled like regular software packages. Only use images from a trusted source. Would you install an RPM/DEB package you found on a random forum? Images should be signed and verified. They should be automatically scanned for known vulnerabilities with tools such as <a
+href=https://github.com/coreos/clair>Clair</a>.</p><p>Forgetting about leftover artifacts in layered Docker images used to be a common mistake. Check out our <a
+href=https://platform.avatao.com/challenges/ab760b71-2ceb-4eb5-9943-93c08926eed6>Docker Build Secrets</a> challenge to see this in action. With multi-stage builds and squashing (merging every layer into only one) this is less of an issue today, but it is still important to bear in mind.</p><h2 id="&quot;unikernels&quot;">Unikernels</h2><p>As you know containers share the host’s kernel but what if they didn’t have to? <a
+href=http://unikernel.org/>Unikernels</a> are specialized, single-address-space machine images constructed by using library operating systems. With unikernels, applications can run like virtual machines without the overhead of an operating system. There are of course obstacles and they still haven’t gained widespread popularity. Maybe RedHat’s very recent <a
+href=https://next.redhat.com/2018/11/14/ukl-a-unikernel-based-on-linux/ >UKL</a> project, a unikernel based on Linux will change that.</p></div></div></div></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_3    et_pb_css_mix_blend_mode_passthrough et_pb_column_empty"></div></div></div><div
+class="et_pb_section et_pb_section_2 et_hover_enabled et_section_regular" ><div
+class="et_pb_row et_pb_row_1 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h2>Related Articles</h2></div></div></div><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_left et_pb_module ">
+<a
+class="et_pb_button et_pb_button_0 et_hover_enabled et_pb_bg_layout_light" href=../blog/index.html >Browse All Categories</a></div></div></div><div
+class="et_pb_row et_pb_row_2 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_with_border et_pb_module et_pb_blog_0 et_pb_blog_grid_wrapper"><div
+class="et_pb_blog_grid clearfix "><div
+class=et_pb_ajax_pagination_container><div
+class=et_pb_salvattore_content data-columns><article
+id=post-1087 class="et_pb_post clearfix et_pb_blog_item_0_0 post-1087 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=et_pb_image_container><a
+href=../a-quantitative-approach-to-data-protection-impact-assessment/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="A quantitative approach to Data Protection Impact Assessment"     width=400 height=250 data-src=https://avatao.com/media/2020/07/QuantitativePIA_lg-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/07/QuantitativePIA_lg.png 479w, https://avatao.com/media/2020/07/QuantitativePIA_lg-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/QuantitativePIA_lg-400x250.png alt="A quantitative approach to Data Protection Impact Assessment" class=" lazy" data-srcset="https://avatao.com/media/2020/07/QuantitativePIA_lg.png 479w, https://avatao.com/media/2020/07/QuantitativePIA_lg-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../a-quantitative-approach-to-data-protection-impact-assessment/index.html >A quantitative approach to Data Protection Impact Assessment</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>Everyone is already familiar with the expression “data is the new oil”. Ever-increasing amounts of information are produced, stored, processed and transferred enabling products and services across all industries. A substantial amount of this information relates to an...</p></div></div></article><article
+id=post-1190 class="et_pb_post clearfix et_pb_blog_item_0_1 post-1190 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=et_pb_image_container><a
+href=../dns-privacy-and-security/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="DNS security and privacy issues and how to avoid them"     width=400 height=250 data-src=https://avatao.com/media/2020/07/DNS_blog-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/07/DNS_blog.png 479w, https://avatao.com/media/2020/07/DNS_blog-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/DNS_blog-400x250.png alt="DNS security and privacy issues and how to avoid them" class=" lazy" data-srcset="https://avatao.com/media/2020/07/DNS_blog.png 479w, https://avatao.com/media/2020/07/DNS_blog-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../dns-privacy-and-security/index.html >DNS security and privacy issues and how to avoid them</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>Even if you use HTTPS, your browsing habits can still be tracked by observing your DNS queries. Besides the lack of confidentiality, plain old DNS doesn’t provide data integrity and authenticity either. This article discusses DNS security and privacy and points out...</p></div></div></article><article
+id=post-1085 class="et_pb_post clearfix et_pb_blog_item_0_2 post-1085 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=et_pb_image_container><a
+href=../not-so-smart-pointers/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="Not so smart pointers"     width=400 height=250 data-src=https://avatao.com/media/2020/07/SmartPointers_lg-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/07/SmartPointers_lg.png 479w, https://avatao.com/media/2020/07/SmartPointers_lg-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/SmartPointers_lg-400x250.png alt="Not so smart pointers" class=" lazy" data-srcset="https://avatao.com/media/2020/07/SmartPointers_lg.png 479w, https://avatao.com/media/2020/07/SmartPointers_lg-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../not-so-smart-pointers/index.html >Not so smart pointers</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>Even though modern C++ ( the standard since C++11) has made programming in this language much more secure, it also introduced new vulnerabilities hidden under its layers of abstractions. In C and older versions of C++, the concept of pointers wasn’t easy to grasp for...</p></div></div></article></div></div></div></div></div></div></div></div></div></div></div><div
+class=et_post_meta_wrapper></div></article></div></div></div></div><footer
+id=main-footer><div
+id=footer-bottom><div
+class="container clearfix"><ul
+class=et-social-icons><li
+class="et-social-icon et-social-facebook">
+<a
+href=# class=icon>
+<span>Facebook</span>
+</a></li><li
+class="et-social-icon et-social-twitter">
+<a
+href=# class=icon>
+<span>Twitter</span>
+</a></li><li
+class="et-social-icon et-social-google-plus">
+<a
+href=# class=icon>
+<span>Google</span>
+</a></li><li
+class="et-social-icon et-social-instagram">
+<a
+href=# class=icon>
+<span>Instagram</span>
+</a></li><li
+class="et-social-icon et-social-rss">
+<a
+href=../feed/index.html class=icon>
+<span>RSS</span>
+</a></li></ul></div></div></footer></div></div><noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-KWMT35N"
+height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><link
+rel=stylesheet id=mediaelement-css  href='../includes/js/mediaelement/mediaelementplayer-legacy.min08e1.css?ver=4.2.16' type=text/css media=all><link
+rel=stylesheet id=wp-mediaelement-css  href='../includes/js/mediaelement/wp-mediaelement.mind96d.css?ver=5.6.1' type=text/css media=all> <script id=contact-form-7-js-extra>var wpcf7={"apiSettings":{"root":"https:\/\/avatao.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};</script> <script src='../xoojeeny/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2' id=contact-form-7-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka&amp;ver=3.0' id=google-recaptcha-js></script> <script id=wpcf7-recaptcha-js-extra>var wpcf7_recaptcha={"sitekey":"6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka","actions":{"homepage":"homepage","contactform":"contactform"}};</script> <script src='../xoojeeny/contact-form-7/modules/recaptcha/script9dff.js?ver=5.3.2' id=wpcf7-recaptcha-js></script> <script src='../includes/js/comment-reply.mind96d.js?ver=5.6.1' id=comment-reply-js></script> <script id=divi-custom-script-js-extra>var DIVI={"item_count":"%d Item","items_count":"%d Items"};var et_shortcodes_strings={"previous":"Previous","next":"Next"};var et_pb_custom={"ajaxurl":"https:\/\/avatao.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/avatao.com\/template\/images","builder_images_uri":"https:\/\/avatao.com\/template\/includes\/builder\/images","et_frontend_nonce":"096d04d563","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"4678cbf7e1","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"1054","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""};var et_builder_utils_params={"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};var et_frontend_scripts={"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};var et_pb_box_shadow_elements=[];var et_pb_motion_elements={"desktop":[],"tablet":[],"phone":[]};var et_pb_sticky_elements=[];</script> <script src='../template/js/custom.unified89df.js?ver=4.6.0' id=divi-custom-script-js></script> <script src='../xoojeeny/cf7-styler-for-divi/scripts/frontend-bundle.min8a54.js?ver=1.0.0' id=cf7-styler-frontend-bundle-js></script> <script src='../template/core/admin/js/common89df.js?ver=4.6.0' id=et-core-common-js></script> <script src='../includes/js/wp-embed.mind96d.js?ver=5.6.1' id=wp-embed-js></script> <script id=mediaelement-core-js-before>var mejsL10n={"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};</script> <script src='../includes/js/mediaelement/mediaelement-and-player.min08e1.js?ver=4.2.16' id=mediaelement-core-js></script> <script src='../includes/js/mediaelement/mediaelement-migrate.mind96d.js?ver=5.6.1' id=mediaelement-migrate-js></script> <script id=mediaelement-js-extra>var _wpmejsSettings={"pluginPath":"\/includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};</script> <script src='../includes/js/mediaelement/wp-mediaelement.mind96d.js?ver=5.6.1' id=wp-mediaelement-js></script> <script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js></script></body>
+<!-- Mirrored from avatao.com/an-overview-of-linux-container-security/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:07:20 GMT -->
+</html>

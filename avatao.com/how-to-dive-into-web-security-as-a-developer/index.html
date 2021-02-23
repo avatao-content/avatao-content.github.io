@@ -1,0 +1,239 @@
+<!DOCTYPE html><html
+lang=en-US>
+<!-- Mirrored from avatao.com/how-to-dive-into-web-security-as-a-developer/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:08:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><link
+rel=stylesheet href=../content/cache/minify/index.html media=all> <script defer src=../content/cache/minify/b0459.default.include.e8b74a.js></script> <style>img.lazy{min-height:1px}</style><link
+rel=preload href=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js as=script><meta
+charset="UTF-8"><meta
+http-equiv="X-UA-Compatible" content="IE=edge"><link
+rel=pingback href=../xmlrpc.php> <script>document.documentElement.className='js';</script> <script id=Cookiebot src=https://consent.cookiebot.com/uc.js    data-cbid=f7ab1fd0-7ef1-4100-9210-b93c0d248a0b data-blockingmode=auto></script><script>var et_site_url='../index.html';var et_post_id='1071';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}</script>  <script data-cfasync=false data-pagespeed-no-defer>var gtm4wp_datalayer_name="dataLayer";var dataLayer=dataLayer||[];</script> <title>How to dive into web-security as a developer - Avatao</title><meta
+name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link
+rel=canonical href=index.html ><meta
+property="og:locale" content="en_US"><meta
+property="og:type" content="article"><meta
+property="og:title" content="How to dive into web-security as a developer - Avatao"><meta
+property="og:url" content="https://avatao.com/how-to-dive-into-web-security-as-a-developer/"><meta
+property="og:site_name" content="Avatao"><meta
+property="article:publisher" content="https://www.facebook.com/theavatao"><meta
+property="article:published_time" content="2018-10-04T10:02:26+00:00"><meta
+property="article:modified_time" content="2021-02-12T15:21:55+00:00"><meta
+property="og:image" content="https://avatao.com/media/2020/07/howtodiveintosecurity_lg.png"><meta
+property="og:image:width" content="1921"><meta
+property="og:image:height" content="1081"><meta
+name="twitter:card" content="summary_large_image"><meta
+name="twitter:creator" content="@theavatao"><meta
+name="twitter:site" content="@theavatao"> <script type=application/ld+json class=yoast-schema-graph>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://avatao.com/#website","url":"https://avatao.com/","name":"Avatao","description":"Interactive secure coding training","potentialAction":[{"@type":"SearchAction","target":"https://avatao.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://avatao.com/how-to-dive-into-web-security-as-a-developer/#primaryimage","inLanguage":"en-US","url":"https://avatao.com/media/2020/07/howtodiveintosecurity_lg.png","width":1921,"height":1081},{"@type":"WebPage","@id":"https://avatao.com/how-to-dive-into-web-security-as-a-developer/#webpage","url":"https://avatao.com/how-to-dive-into-web-security-as-a-developer/","name":"How to dive into web-security as a developer - Avatao","isPartOf":{"@id":"https://avatao.com/#website"},"primaryImageOfPage":{"@id":"https://avatao.com/how-to-dive-into-web-security-as-a-developer/#primaryimage"},"datePublished":"2018-10-04T10:02:26+00:00","dateModified":"2021-02-12T15:21:55+00:00","author":{"@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://avatao.com/how-to-dive-into-web-security-as-a-developer/"]}]},{"@type":"Person","@id":"https://avatao.com/#/schema/person/10729c815c657d708ca537e16aa8b435","name":"awataoadmin","image":{"@type":"ImageObject","@id":"https://avatao.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/c623e99bd04d7916c98927d1d5ae0587?s=96&d=mm&r=g","caption":"awataoadmin"},"sameAs":["https://avatao.com"]}]}</script> <link
+rel=dns-prefetch href=http://www.google.com/><link
+rel=dns-prefetch href=http://fonts.googleapis.com/><link
+rel=dns-prefetch href=http://s.w.org/><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Feed" href=../feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; Comments Feed" href=../comments/feed/index.html ><link
+rel=alternate type=application/rss+xml title="Avatao &raquo; How to dive into web-security as a developer Comments Feed" href=feed/index.html > <script>window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/avatao.com\/includes\/js\/wp-emoji-release.min.js?ver=5.6.1"}};!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);</script> <style>img.wp-smiley,img.emoji{display:inline !important;border:none !important;box-shadow:none !important;height:1em !important;width:1em !important;margin:0 .07em !important;vertical-align:-0.1em !important;background:none !important;padding:0 !important}</style><link
+rel=stylesheet id=wp-block-library-css  href='../includes/css/dist/block-library/style.mind96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-grid-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/cf7-gridd96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dipe-module-css  href='../xoojeeny/cf7-styler-for-divi/assets/css/moduled96d.css?ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=contact-form-7-css  href='../xoojeeny/contact-form-7/includes/css/styles9dff.css?ver=5.3.2' type=text/css media=all><link
+rel=stylesheet id=monsterinsights-popular-posts-style-css  href='../xoojeeny/google-analytics-for-wordpress/assets/css/frontend.minc6b6.css?ver=7.13.0' type=text/css media=all><link
+rel=stylesheet id=divi-style-css  href='../template/allskin89df.css?ver=4.6.0' type=text/css media=all><link
+rel=stylesheet id=cf7-styler-styles-css  href='../xoojeeny/cf7-styler-for-divi/styles/style.min8a54.css?ver=1.0.0' type=text/css media=all><link
+rel=stylesheet id=et-builder-googlefonts-cached-css  href='https://fonts.googleapis.com/css?family=Barlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWork+Sans%3A100%2C200%2C300%2Cregular%2C500%2C600%2C700%2C800%2C900&amp;subset=latin%2Clatin-ext&amp;display=swap&amp;ver=5.6.1' type=text/css media=all><link
+rel=stylesheet id=dashicons-css  href='../includes/css/dashicons.mind96d.css?ver=5.6.1' type=text/css media=all> <script src='../includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id=jquery-core-js></script> <script src='../includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id=jquery-migrate-js></script> <script src='../xoojeeny/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker0455.js?ver=1.11.6' id=gtm4wp-form-move-tracker-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo&amp;ver=5.6.1' id=recaptcha-v3-js></script> <script src='../template/core/admin/js/es6-promise.auto.mind96d.js?ver=5.6.1' id=es6-promise-js></script> <script id=et-core-api-spam-recaptcha-js-extra>var et_core_api_spam_recaptcha={"site_key":"6LdB5sMZAAAAAALQH4qwyq6JIYl3J1iu-abr_xDo","page_action":{"action":"how_to_dive_into_web_security_as_a_developer"}};</script> <script src='../template/core/admin/js/recaptchad96d.js?ver=5.6.1' id=et-core-api-spam-recaptcha-js></script> <script id=eio-lazy-load-js-extra>var eio_lazy_vars={"exactdn_domain":"","skip_autoscale":"0"};</script> <script src='../xoojeeny/ewww-image-optimizer/includes/lazysizes.min8e09.js?ver=582.0' id=eio-lazy-load-js></script> <link
+rel=EditURI type=application/rsd+xml title=RSD href=../xmlrpc0db0.php?rsd><link
+rel=shortlink href='../indexb766.html?p=1071'><link
+rel=alternate type=application/json+oembed href="../wp-json/oembed/1.0/embed2a9b.json?url=https%3A%2F%2Favatao.com%2Fhow-to-dive-into-web-security-as-a-developer%2F"><link
+rel=alternate type=text/xml+oembed href="../wp-json/oembed/1.0/embed6c81?url=https%3A%2F%2Favatao.com%2Fhow-to-dive-into-web-security-as-a-developer%2F&amp;format=xml"><style>.entry-meta{display:none !important}.home .entry-meta{display:none}.entry-footer{display:none !important}.home .entry-footer{display:none}</style>
+ <script data-cfasync=false data-pagespeed-no-defer>var dataLayer_content={"pagePostType":"post","pagePostType2":"single-post","pageCategory":["skills-needed-for-cybersecurity"],"pagePostAuthor":"awataoadmin"};dataLayer.push(dataLayer_content);</script> <script data-cfasync=false>/*<![CDATA[*/(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KWMT35N');/*]]>*/</script> <meta
+name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><noscript><style>.lazyload[data-src]{display:none !important}</style></noscript><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-150x150.png sizes=32x32><link
+rel=icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png sizes=192x192><link
+rel=apple-touch-icon href=../media/2020/08/cropped-Avatao-favicon-300x300.png><meta
+name="msapplication-TileImage" content="https://avatao.com/media/2020/08/cropped-Avatao-favicon-300x300.png"><link
+rel=stylesheet id=et-core-unified-1071-cached-inline-styles href=../content/et-cache/1071/et-core-unified-1071-16140601313867.min.css onerror="et_core_page_resource_fallback(this, true)" onload=et_core_page_resource_fallback(this)></head><body
+class="post-template-default single single-post postid-1071 single-format-standard et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css"><div
+id=page-container><header
+id=main-header data-height-onload=66><div
+class="container clearfix et_menu_container"><div
+class=logo_container>
+<span
+class=logo_helper></span>
+<a
+href=../index.html >
+<img
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=Avatao id=logo data-height-percentage=54 data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png class=lazyload><noscript><img
+class=lazy src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/avatao_logo_dark_156x40-14.png alt=Avatao id=logo data-height-percentage=54 data-eio=l></noscript>
+</a></div><div
+id=et-top-navigation data-height=66 data-fixed-height=40><nav
+id=top-menu-nav><ul
+id=top-menu class=nav><li
+id=menu-item-1458 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1458"><a
+href="../index0a89.html?page_id=907">Solutions</a><ul
+class=sub-menu><li
+id=menu-item-4059 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4059"><a
+href=../security-training/index.html >Security training</a></li><li
+id=menu-item-4318 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4318"><a
+href=../compliance/index.html >Compliance</a></li></ul></li><li
+id=menu-item-1721 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1721"><a
+href=../topics-we-cover/index.html >Topics we cover</a></li><li
+id=menu-item-1448 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1448"><a
+href=../case-studies/index.html >Resources</a><ul
+class=sub-menu><li
+id=menu-item-3850 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3850"><a
+href=../blog/index.html >Blog</a></li><li
+id=menu-item-1445 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1445"><a
+href=../case-studies/index.html >Case studies</a></li><li
+id=menu-item-2740 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2740"><a
+href=../how-to-build-security-advantage-from-bugs.html>Ebooks</a></li></ul></li><li
+id=menu-item-3897 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3897"><a
+href=../our-pricing/index.html >Plans</a></li><li
+id=menu-item-3581 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3581"><a
+href=../contact/index.html >Contact</a></li><li
+id=menu-item-1450 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1450"><a
+href=https://next.avatao.com/>Login</a></li><li
+id=menu-item-3121 class="menu_button menu-item menu-item-type-custom menu-item-object-custom menu-item-3121"><a
+href=https://next.avatao.com/trial>Try for free</a></li></ul></nav><div
+id=et_top_search>
+<span
+id=et_search_icon></span></div><div
+id=et_mobile_nav_menu><div
+class="mobile_nav closed">
+<span
+class=select_page>Select Page</span>
+<span
+class="mobile_menu_bar mobile_menu_bar_toggle"></span></div></div></div></div><div
+class=et_search_outer><div
+class="container et_search_form_container"><form
+role=search method=get class=et-search-form action=https://avatao.com/ >
+<input
+type=search class=et-search-field placeholder="Search &hellip;" value name=s title="Search for:"></form>
+<span
+class=et_close_search_field></span></div></div></header><div
+id=et-main-area><div
+id=main-content><div
+class=container><div
+id=content-area class=clearfix><div
+id=left-area><article
+id=post-1071 class="et_pb_post post-1071 post type-post status-publish format-standard has-post-thumbnail hentry category-skills-needed-for-cybersecurity"><div
+class=entry-content><div
+id=et-boc class=et-boc><div
+class="et-l et-l--post"><div
+class="et_builder_inner_content et_pb_gutters3"><div
+class="et_pb_section et_pb_section_0 et_section_regular" ><div
+class="et_pb_row et_pb_row_0 et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner>How to dive into web-security as a developer</div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_blurb et_pb_blurb_0 et_hover_enabled  et_pb_text_align_center  et_pb_blurb_position_left et_pb_bg_layout_light"><div
+class=et_pb_blurb_content><div
+class=et_pb_blurb_container><h4 class="et_pb_module_header"><span>Written by Dániel Szpisják</span></h4></div></div></div></div></div></div><div
+class="et_pb_section et_pb_section_1 et_hover_enabled et_section_specialty" ><div
+class="et_pb_row et_pb_gutters2"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_2   et_pb_specialty_column  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_row_inner et_pb_row_inner_0 et_hover_enabled"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_0 et_hover_enabled et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><p><span
+style="font-size: 19px;">Great developers possess a wide variety of skills, from technological expertise to product thinking. You need some of these for your current job, others you just picked up over the years. Nevertheless, it’s all valuable and contributes to the fact that you are seen as a seasoned software engineer. </span></p><div
+class=blog_content><hr><p>Competence doesn’t come overnight. Learning something new takes effort, practice, and hard work. Not to mention, that you have a portfolio of skills you need to keep up-to-date. If you fail to do that, your knowledge quickly becomes obsolete. I bet you have seen this around you.</p><p>Understandably, you are very careful with your time. Essentially this is the only limited resource in your life. Committing to something new without a clear return on investment is a risky business, which is best avoided. So this begs the question.</p><h1 id="&quot;why-get-into-security&quot;">Why get into security?</h1><p>Well, let’s see why so many choose not to engage with the topic. Here are the top 3 things I hear most often.</p><p>“It doesn’t present a clear reward…”</p><p><strong>Yep, security is not a new language or a framework which makes your life a whole lot easier.</strong> If anything, it probably complicates it. It does, however, have upsides as well. Learning security will make you a better developer. It’ll expose you to new concepts shaping your thinking allowing you to create better designs. The rewards are there, and you need to know where to look.</p><p>“It takes major upfront effort…”</p><p>Not really, <strong>security, like anything, can be learned iteratively, building on things you already know and understand.</strong> Plus, if you start putting effort into it, you’ll quickly become more valuable for your team and your company. Win-win!</p><p>“The web is full of wildly inaccurate security articles, and it’s easy to get it wrong…”</p><p>You got me. This is all true, and it’s all the more reason we need more developers to join the party. Depending on where you are in your career, you may have noticed that <strong>without decent security knowledge you can only go so far.</strong> It’s expected of you, especially once you get into lead engineer roles.</p><p>In short, <strong>learning security is a good career move.</strong> This article is designed to give you a few tips on how to approach the topic for maximum gain. In my experience, we, developers, love learning, so I recommend a mixture of the following three practices.</p><h1 id="&quot;build-a-solid-foundation&quot;">Build a solid foundation</h1><p>Chances are, you are already familiar with quite a few security vulnerabilities and concepts. The first step is to understand what’s happening behind the scenes. It’s usually more than you would first think. Let’s see an example.</p><p>Take <strong><a
+href=https://blog.avatao.com/CSP-tutorial/ >XSS</a></strong> for instance; at first glance, it’s merely an alert box unable to cause real harm. If you look closer though, it is a lot more than that; it’s code execution in the browser. It allows the attacker to do almost anything, from mining bitcoin to defacing the site or attack the user’s OS. You as a developer must understand its impact and possible defense mechanisms. Speaking of which, what can you do about it? Does the following sound familiar?</p><p><strong>“Just escape the brackets, and you’ll be fine!”</strong><br> <em>Captain Obvious</em></p><p><strong>“Uhm, okay, but what about injections that do not require brackets?”</strong><br> <em>Developer</em></p><p>If you follow along with this conversation, you may or may not arrive at the concept of <strong>context-sensitive escaping</strong>, which is excellent, it is a correct answer. However, what if you can’t use that because you need to display HTML, like in an editor? That’s where you need to start thinking. See where I am getting at?</p><p>It’s not enough to know the surface; <strong>you must develop a skill to see what’s happening under the hood</strong>. Be familiar with an attack’s anatomy, and be able to identify potential countermeasures.</p><p>Start with the things you already know and make your understanding rock solid. <strong>HTTP(S), XSS, SQL injections, CSRF, and alike might look too simple at first, but take the time to dig deeper and create the solid foundation needed to build on.</strong></p><p>As a first step check out my <a
+href=https://www.securitydrops.com/360-xss/ >360 XSS</a> post and <a
+href=https://platform.avatao.com/paths/e65ee304-7299-40d0-bdd1-93f35c381560/challenges/fa6eaf92-2f17-11e6-bdf4-0800200c9a66>Avatao’s free XSS challenges</a>. It’ll get you up to speed regarding XSS and also give you an idea about what kind of depth to look for in further resources. Also, take a look at <a
+href=https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series>OWASP’s cheatsheet series</a> and browse the rest of <a
+href=https://blog.avatao.com/ >our blog</a>. Both are excellent sources of knowledge.</p><p>While reading these materials, don’t aim for completion. Aim for comprehension. Engage with the ideas in the articles, connect them with your pre-existing knowledgebase, map them to your experiences, identify critical lessons. Most importantly, do not take them as laws you need to obey. Practicing security is not about enforcing best practices, it’s about <a
+href=https://www.securitydrops.com/security-for-software-engineers/ >making smart tradeoffs</a>. Onward.</p><h1 id="&quot;expose-yourself-to-more-security-knowledge&quot;">Expose yourself to more security knowledge</h1><p>Along with mastering the basics, you should start exposing yourself to more and more concepts from security. When you learn, your brain forms new neural connections. You remember new information best if it connects to multiple known knowledge fragments. Luckily you don’t need superior security knowledge to start, your developer skills and the foundation you built will serve you quite well.</p><p>Doing this is both simple and hard at the same time. It’s easy as all you need to do is subscribe to security blogs, follow security people on Twitter, read whitepapers from the industry, and on and on. Do everything you would to keep your developer knowledge current.</p><p>It is also hard. I’ll be frank here; you will never have enough time to do this. Luckily, you shouldn’t need to. Security has to be an enhancer of your skills, not a replacer (unless you want it to). This is why I started blogging, to create small, easily consumable drops of security knowledge essential for developers.</p><p><strong>A great way to jump-start your exposure is to browse <a
+href=https://www.securitydrops.com/glossary/ >the Security Glossary at Securitydrops</a> and browse the rest of the site.</strong></p><p>Foundation, check! Exposure, check! Moving on!</p><h1 id="&quot;get-your-hands-dirty&quot;">Get your hands dirty</h1><p>“In theory, there is no difference between theory and practice. In practice, there is.”</p><p>You need to get hands-on. Just like with software development, you learn faster and more in depth when your hands are on the keyboard. In my experience, the best way to learn something new is to practice it and have a mentor available to nudge you in the right direction if you wander off-track.</p><p>Consequently, I believe, the best way to learn security is in workshops with a great trainer. I have seen this work many times; it’s engaging, fun and educational at the same time. This is not always available, and next best thing, in my opinion, is online hands-on training.</p><p>These are available in a large number with varying quality. You can find video courses with practice sites, online hacking challenges, or vulnerable open-source applications. Depending on your goals and requirements either could be a great choice.</p><p>I found the <a
+href=../index.html >Avatao platform</a> to be optimized for learning. It provides hints if you are stuck and gives you plenty of context and recommended readings for each challenge. No wonder it works well, people who ran real-life workshops built it. Make sure to give it a try!</p><h1 id="&quot;conclusion&quot;">Conclusion</h1><p>Security knowledge is an excellent addition to your skillset. <strong>During your career advancement, it will be a requirement at a certain point.</strong> It’ll also make you better at what you currently do. Your software knowledge is a great foundation to build on. Take one step at a time, and you will grow faster than you think.</p><p>Start with things already familiar and deepen your knowledge there. Once you are confident withf these topics expose yourself to new concepts, vulnerabilities, and defense techniques. In the meantime, do not forget about the importance of hands-on training.</p><p>Remember, security is not about mindlessly enforcing best practices, it’s about having the ability to make smart tradeoffs. For that, the industry needs developers with the right combination of security mindset and knowledge. We need you to join the security party!</p><h2 id="&quot;about-the-author&quot;">About the author</h2><p>Dániel Szpisják is the Head of Engineering at Emarsys, security expert and enthusiast. His blog <a
+href=https://www.securitydrops.com/ ><strong>Securitydrops</strong></a> covers wide range of security related topics.</p><h2 id="&quot;about-avatao&quot;">About Avatao</h2><p>Avatao is a learning platform providing wide range of <strong>online security challenges and tutorials</strong>. Our topics cover web security, secure coding in Java, C/C++, GDPR, payment systems, secure API design, DevSecOps and many more with <strong>more than 600 online challenges</strong>.</p></div></div></div></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_3    et_pb_css_mix_blend_mode_passthrough et_pb_column_empty"></div></div></div><div
+class="et_pb_section et_pb_section_2 et_hover_enabled et_section_regular" ><div
+class="et_pb_row et_pb_row_1 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_with_border et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light"><div
+class=et_pb_text_inner><h2>Related Articles</h2></div></div></div><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_left et_pb_module ">
+<a
+class="et_pb_button et_pb_button_0 et_hover_enabled et_pb_bg_layout_light" href=../blog/index.html >Browse All Categories</a></div></div></div><div
+class="et_pb_row et_pb_row_2 et_pb_equal_columns et_pb_gutters2"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_with_border et_pb_module et_pb_blog_0 et_pb_blog_grid_wrapper"><div
+class="et_pb_blog_grid clearfix "><div
+class=et_pb_ajax_pagination_container><div
+class=et_pb_salvattore_content data-columns><article
+id=post-4164 class="et_pb_post clearfix et_pb_blog_item_0_0 post-4164 post type-post status-publish format-standard has-post-thumbnail sticky hentry category-secure-coding-best-practices category-skills-needed-for-cybersecurity"><div
+class=et_pb_image_container><a
+href=../5-best-practices-to-successfully-implement-training-as-part-of-your-security-program/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="5 best practices to successfully implement training as part of your security program"     width=400 height=250 data-src=https://avatao.com/media/enterprise-security-program-400x250.png loading=lazy data-srcset="https://avatao.com/media/enterprise-security-program.png 479w, https://avatao.com/media/enterprise-security-program-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/enterprise-security-program-400x250.png alt="5 best practices to successfully implement training as part of your security program" class=" lazy" data-srcset="https://avatao.com/media/enterprise-security-program.png 479w, https://avatao.com/media/enterprise-security-program-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../5-best-practices-to-successfully-implement-training-as-part-of-your-security-program/index.html >5 best practices to successfully implement training as part of your security program</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>For most companies, security is considered a side quest, which is partly related to the daily processes. In reality, security ought to be a strong foundation of any organization. To ensure the defense of the enterprise, the relevant teams need strong security knowledge and abilities.</p></div></div></article><article
+id=post-3662 class="et_pb_post clearfix et_pb_blog_item_0_1 post-3662 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices category-skills-needed-for-cybersecurity"><div
+class=et_pb_image_container><a
+href=../5-key-challenges-when-building-a-security-training-program/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="5 Key Challenges When Building a Security Training Program"     width=400 height=250 data-src=https://avatao.com/media/feb04blog2-01-400x250.png loading=lazy data-srcset="https://avatao.com/media/feb04blog2-01.png 479w, https://avatao.com/media/feb04blog2-01-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/feb04blog2-01-400x250.png alt="5 Key Challenges When Building a Security Training Program" class=" lazy" data-srcset="https://avatao.com/media/feb04blog2-01.png 479w, https://avatao.com/media/feb04blog2-01-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../5-key-challenges-when-building-a-security-training-program/index.html >5 Key Challenges When Building a Security Training Program</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>To build an enterprise security program, one has to go back to the well-known fundamentals of organizational change: People, Process, and Technology (originates from Harold Leavitt’s “Applied Organization Change in Industry”, 1964).</p></div></div></article><article
+id=post-1207 class="et_pb_post clearfix et_pb_blog_item_0_2 post-1207 post type-post status-publish format-standard has-post-thumbnail hentry category-secure-coding-best-practices"><div
+class=et_pb_image_container><a
+href=../getting-started-with-kotlin/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="Getting started with Kotlin"     width=400 height=250 data-src=https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png 479w, https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png alt="Getting started with Kotlin" class=" lazy" data-srcset="https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png 479w, https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../getting-started-with-kotlin/index.html >Getting started with Kotlin</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>If you are working on Java projects you might have heard about other languages that run on the JVM, like Clojure, Kotlin or Scala. Programmers like to try new things out but is it worth it to pick one of them over Java? Is it worth getting started with Kotlin? We're...</p></div></div></article><article
+id=post-821 class="et_pb_post clearfix et_pb_blog_item_0_3 post-821 post type-post status-publish format-standard has-post-thumbnail hentry category-make-the-most-of-avatao"><div
+class=et_pb_image_container><a
+href=../tutorial-framework-containerizing-it-security-knowledge/index.html class=entry-featured-image-url><img
+src=../content/ewww/lazy/placeholder-400x250.png alt="The Tutorial Framework: Containerizing IT Security Knowledge"     width=400 height=250 data-src=https://avatao.com/media/2020/07/blog1-11-1-1-400x250.png loading=lazy data-srcset="https://avatao.com/media/2020/07/blog1-11-1-1.png 479w, https://avatao.com/media/2020/07/blog1-11-1-1-400x250.png 480w" data-sizes=auto class=lazyload><noscript><img
+src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20250'%3E%3C/svg%3E" data-src=https://avatao.com/media/2020/07/blog1-11-1-1-400x250.png alt="The Tutorial Framework: Containerizing IT Security Knowledge" class=" lazy" data-srcset="https://avatao.com/media/2020/07/blog1-11-1-1.png 479w, https://avatao.com/media/2020/07/blog1-11-1-1-400x250.png 480w " data-sizes="(max-width:479px) 479px, 100vw "  width=400 height=250 data-eio=l></noscript></a></div><h2 class="entry-title"><a
+href=../tutorial-framework-containerizing-it-security-knowledge/index.html >The Tutorial Framework: Containerizing IT Security Knowledge</a></h2><p
+class=post-meta><span
+class=published></span></p><div
+class=post-content><div
+class=post-content-inner><p>How can we make security education a whole lot more accessible and fun? The tutorial framework is the answer. In this article we dive into how to create interactive learning environments running inside containers. The Phantom Menace Something is not quite right with...</p></div></div></article></div></div></div></div></div></div></div></div></div></div></div><div
+class=et_post_meta_wrapper></div></article></div></div></div></div><footer
+id=main-footer><div
+id=footer-bottom><div
+class="container clearfix"><ul
+class=et-social-icons><li
+class="et-social-icon et-social-facebook">
+<a
+href=# class=icon>
+<span>Facebook</span>
+</a></li><li
+class="et-social-icon et-social-twitter">
+<a
+href=# class=icon>
+<span>Twitter</span>
+</a></li><li
+class="et-social-icon et-social-google-plus">
+<a
+href=# class=icon>
+<span>Google</span>
+</a></li><li
+class="et-social-icon et-social-instagram">
+<a
+href=# class=icon>
+<span>Instagram</span>
+</a></li><li
+class="et-social-icon et-social-rss">
+<a
+href=../feed/index.html class=icon>
+<span>RSS</span>
+</a></li></ul></div></div></footer></div></div><noscript><iframe
+src="https://www.googletagmanager.com/ns.html?id=GTM-KWMT35N"
+height=0 width=0 style=display:none;visibility:hidden></iframe></noscript><link
+rel=stylesheet id=mediaelement-css  href='../includes/js/mediaelement/mediaelementplayer-legacy.min08e1.css?ver=4.2.16' type=text/css media=all><link
+rel=stylesheet id=wp-mediaelement-css  href='../includes/js/mediaelement/wp-mediaelement.mind96d.css?ver=5.6.1' type=text/css media=all> <script id=contact-form-7-js-extra>var wpcf7={"apiSettings":{"root":"https:\/\/avatao.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};</script> <script src='../xoojeeny/contact-form-7/includes/js/scripts9dff.js?ver=5.3.2' id=contact-form-7-js></script> <script src='https://www.google.com/recaptcha/api.js?render=6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka&amp;ver=3.0' id=google-recaptcha-js></script> <script id=wpcf7-recaptcha-js-extra>var wpcf7_recaptcha={"sitekey":"6LcGqz8aAAAAADhqzTuzvWE6-avs7ojEr3wrbGka","actions":{"homepage":"homepage","contactform":"contactform"}};</script> <script src='../xoojeeny/contact-form-7/modules/recaptcha/script9dff.js?ver=5.3.2' id=wpcf7-recaptcha-js></script> <script src='../includes/js/comment-reply.mind96d.js?ver=5.6.1' id=comment-reply-js></script> <script id=divi-custom-script-js-extra>var DIVI={"item_count":"%d Item","items_count":"%d Items"};var et_shortcodes_strings={"previous":"Previous","next":"Next"};var et_pb_custom={"ajaxurl":"https:\/\/avatao.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/avatao.com\/template\/images","builder_images_uri":"https:\/\/avatao.com\/template\/includes\/builder\/images","et_frontend_nonce":"096d04d563","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"4678cbf7e1","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"1071","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""};var et_builder_utils_params={"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};var et_frontend_scripts={"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};var et_pb_box_shadow_elements=[];var et_pb_motion_elements={"desktop":[],"tablet":[],"phone":[]};var et_pb_sticky_elements=[];</script> <script src='../template/js/custom.unified89df.js?ver=4.6.0' id=divi-custom-script-js></script> <script src='../xoojeeny/cf7-styler-for-divi/scripts/frontend-bundle.min8a54.js?ver=1.0.0' id=cf7-styler-frontend-bundle-js></script> <script src='../template/core/admin/js/common89df.js?ver=4.6.0' id=et-core-common-js></script> <script src='../includes/js/wp-embed.mind96d.js?ver=5.6.1' id=wp-embed-js></script> <script id=mediaelement-core-js-before>var mejsL10n={"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};</script> <script src='../includes/js/mediaelement/mediaelement-and-player.min08e1.js?ver=4.2.16' id=mediaelement-core-js></script> <script src='../includes/js/mediaelement/mediaelement-migrate.mind96d.js?ver=5.6.1' id=mediaelement-migrate-js></script> <script id=mediaelement-js-extra>var _wpmejsSettings={"pluginPath":"\/includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};</script> <script src='../includes/js/mediaelement/wp-mediaelement.mind96d.js?ver=5.6.1' id=wp-mediaelement-js></script> <script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src=../xoojeeny/w3-total-cache/pub/js/lazyload.min.js></script></body>
+<!-- Mirrored from avatao.com/how-to-dive-into-web-security-as-a-developer/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Feb 2021 06:08:10 GMT -->
+</html>
